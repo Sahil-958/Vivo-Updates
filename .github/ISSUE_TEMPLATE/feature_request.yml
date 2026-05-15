@@ -1,7 +1,7 @@
 name: Feature Request
 description: Suggest an idea or enhancement for ShizuCallRecorder
 title: "[Feature]: "
-labels: ["enhancement", "Waiting For Contributors Review"]
+labels: ["Type: Feature", "Waiting For Contributors Review"]
 assignees: []
 
 body:
