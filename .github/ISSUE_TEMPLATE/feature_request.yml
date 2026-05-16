@@ -13,15 +13,11 @@ body:
       options:
         - label: I have searched existing [issues](https://github.com/kitsumed/ShizuCallRecorder/issues) and [discussions](https://github.com/kitsumed/ShizuCallRecorder/discussions/categories/community-support) and this is not a duplicate.
           required: true
-        - label: I am suggesting a feature or enhancement for ShizuCallRecorder itself, NOT for Shizuku or another app.
+        - label: I am suggesting a new feature or enhancement for ShizuCallRecorder itself, NOT for Shizuku or another app.
           required: true
-        - label: I have read the project [README](https://github.com/kitsumed/ShizuCallRecorder/blob/main/README.md).
-          required: true
-        - label: I have read the project [CONTRIBUTING](https://github.com/kitsumed/ShizuCallRecorder/blob/main/CONTRIBUTING.md).
+        - label: I have read the project [README.md](https://github.com/kitsumed/ShizuCallRecorder/blob/main/README.md) and [CONTRIBUTING.md](https://github.com/kitsumed/ShizuCallRecorder/blob/main/CONTRIBUTING.md).
           required: true
         - label: I have read the application [docs](https://github.com/kitsumed/ShizuCallRecorder/blob/main/docs/SUPPORT.md).
-          required: true
-        - label: I am suggesting a new feature, not asking for help / support.
           required: true
 
   - type: textarea
