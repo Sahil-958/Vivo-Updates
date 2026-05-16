@@ -694,6 +694,3 @@ To prevent misrepresentation of the origin of the material, any modified version
 4. Attribution & Linking (Section 7, subsection b)
 Any modified version must include a clear, visible attribution to the original project within the user interface (e.g., an "About" screen). This attribution must include a link to the original project's repository:
 > *"This software is a fork of ShizuCallRecorder, available at [Original URL]."*
-
-5. Preservation of Terms (Section 7, subsection b)
-This notice of additional terms must be preserved and included in any redistributions or modified versions of the software. You may not remove these specific requirements from downstream copies.
