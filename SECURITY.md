@@ -12,6 +12,9 @@ Security updates are provided **only** for the following versions:
 
 Reports affecting unsupported versions will be closed without action.
 
+>[!TIP]
+> Releases are build using Github Actions Runners. We also attests the file so that you can trace them back to the runner. You can see the [Github CLI docs](https://cli.github.com/manual/gh_attestation_verify) on how to do this.
+
 ---
 
 ## Reporting a Vulnerability
