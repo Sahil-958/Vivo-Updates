@@ -13,6 +13,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.*
+import androidx.compose.ui.tooling.preview.Preview
+import com.kitsumed.shizucallrecorder.ui.theme.ShizucallrecorderTheme
 
 /**
  * A key/label/description/etc... data class used to populate dropdown menus.
@@ -80,6 +82,27 @@ fun M3DropdownField(
                     contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
                 )
             }
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewM3DropdownField() {
+    val options = listOf(
+        OptionItem("opt1", "Standard Option", "Description for option 1"),
+        OptionItem("opt2", "Another Option", "Description for option 2"),
+        OptionItem("opt3", "Disabled Option", "This cannot be selected", enabled = false)
+    )
+    ShizucallrecorderTheme(darkTheme = false) {
+        Surface {
+            M3DropdownField(
+                label = "Select an option",
+                selected = options[0],
+                options = options,
+                onOptionSelected = {},
+                modifier = Modifier.fillMaxWidth()
+            )
         }
     }
 }

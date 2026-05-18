@@ -58,9 +58,6 @@ data class ContactEntry(
 /**
  * Full-screen dialog that lets the user select one or more contacts from a searchable list.
  *
- * The dialog shows every contact in [contacts] in a [LazyColumn] with a search bar at the top.
- *
- *
  * @param title            Heading text shown at the top of the dialog.
  * @param contacts         Full list of device contacts to display.
  * @param initialSelection Numbers that should be pre-checked when the dialog opens.
@@ -71,6 +68,43 @@ data class ContactEntry(
 
 @Composable
 fun ContactSelectionDialog(
+    title: String,
+    contacts: List<ContactEntry>,
+    initialSelection: Set<String>,
+    onConfirm: (Set<String>) -> Unit,
+    onDismiss: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(usePlatformDefaultWidth = false)
+    ) {
+        ContactSelectionContent(
+            title = title,
+            contacts = contacts,
+            initialSelection = initialSelection,
+            onConfirm = onConfirm,
+            onDismiss = onDismiss,
+            modifier = modifier
+        )
+    }
+}
+
+/**
+ * The main content of the contact selection dialog, extracted to a separate composable for better
+ * testability and to support Android Studio Preview.
+ *
+ * Shows every contact in [contacts] in a [LazyColumn] with a search bar at the top.
+ *
+ * @param title            Heading text shown at the top of the dialog.
+ * @param contacts         Full list of device contacts to display.
+ * @param initialSelection Numbers that should be pre-checked when the dialog opens.
+ * @param onConfirm        Called with the final [Set] of selected numbers when the user taps OK.
+ * @param onDismiss        Called when the user taps Cancel or dismisses the dialog.
+ * @param modifier         Optional layout modifier for the root [Surface].
+ */
+@Composable
+fun ContactSelectionContent(
     title: String,
     contacts: List<ContactEntry>,
     initialSelection: Set<String>,
@@ -95,86 +129,81 @@ fun ContactSelectionDialog(
         }
     }
 
-    Dialog(
-        onDismissRequest = onDismiss,
-        properties = DialogProperties(usePlatformDefaultWidth = false)
+    Surface(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        shape = MaterialTheme.shapes.extraLarge,
+        tonalElevation = 6.dp
     ) {
-        Surface(
-            modifier = modifier
-                .fillMaxSize()
-                .padding(16.dp),
-            shape = MaterialTheme.shapes.extraLarge,
-            tonalElevation = 6.dp
-        ) {
-            Column(modifier = Modifier.fillMaxSize()) {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.headlineSmall,
-                    modifier = Modifier.padding(24.dp)
+        Column(modifier = Modifier.fillMaxSize()) {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.headlineSmall,
+                modifier = Modifier.padding(24.dp)
+            )
+
+            OutlinedTextField(
+                value = searchQuery,
+                onValueChange = { searchQuery = it },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp, vertical = 8.dp),
+                placeholder = { Text(stringResource(R.string.contact_search_hint)) },
+                leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
+                shape = CircleShape,
+                singleLine = true,
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedContainerColor = MaterialTheme.colorScheme.surface
                 )
+            )
 
-                OutlinedTextField(
-                    value = searchQuery,
-                    onValueChange = { searchQuery = it },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 20.dp, vertical = 8.dp),
-                    placeholder = { Text(stringResource(R.string.contact_search_hint)) },
-                    leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
-                    shape = CircleShape,
-                    singleLine = true,
-                    colors = OutlinedTextFieldDefaults.colors(
-                        focusedContainerColor = MaterialTheme.colorScheme.surface
-                    )
-                )
+            LazyColumn(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth(),
+                contentPadding = PaddingValues(vertical = 8.dp)
+            ) {
+                items(
+                    items = filteredContacts,
+                    key = { it.number } // Stable key enables efficient diffing in LazyColumn.
+                ) { contact ->
+                    val isSelected = selectedNumbers.contains(contact.number)
 
-                LazyColumn(
-                    modifier = Modifier
-                        .weight(1f)
-                        .fillMaxWidth(),
-                    contentPadding = PaddingValues(vertical = 8.dp)
-                ) {
-                    items(
-                        items = filteredContacts,
-                        key = { it.number } // Stable key enables efficient diffing in LazyColumn.
-                    ) { contact ->
-                        val isSelected = selectedNumbers.contains(contact.number)
-
-                        ContactListItem(
-                            contact = contact,
-                            isSelected = isSelected,
-                            onToggle = {
-                                // Directly mutate the observable list. Because selectedNumbers is
-                                // a mutableStateListOf, Compose triggers a refresh (recompose)
-                                // only for this item's row — not the entire list.
-                                if (isSelected) {
-                                    selectedNumbers.remove(contact.number)
-                                } else {
-                                    selectedNumbers.add(contact.number)
-                                }
+                    ContactListItem(
+                        contact = contact,
+                        isSelected = isSelected,
+                        onToggle = {
+                            // Directly mutate the observable list. Because selectedNumbers is
+                            // a mutableStateListOf, Compose triggers a refresh (recompose)
+                            // only for this item's row — not the entire list.
+                            if (isSelected) {
+                                selectedNumbers.remove(contact.number)
+                            } else {
+                                selectedNumbers.add(contact.number)
                             }
-                        )
-                    }
-                }
-
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp),
-                    horizontalArrangement = Arrangement.End
-                ) {
-                    TextButton(onClick = onDismiss) {
-                        Text(stringResource(R.string.general_cancel))
-                    }
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Button(
-                        onClick = {
-                            // Convert the observable list back to an immutable Set for the callback.
-                            onConfirm(selectedNumbers.toSet())
                         }
-                    ) {
-                        Text(stringResource(R.string.general_ok))
+                    )
+                }
+            }
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                horizontalArrangement = Arrangement.End
+            ) {
+                TextButton(onClick = onDismiss) {
+                    Text(stringResource(R.string.general_cancel))
+                }
+                Spacer(modifier = Modifier.width(8.dp))
+                Button(
+                    onClick = {
+                        // Convert the observable list back to an immutable Set for the callback.
+                        onConfirm(selectedNumbers.toSet())
                     }
+                ) {
+                    Text(stringResource(R.string.general_ok))
                 }
             }
         }
@@ -291,7 +320,7 @@ fun PreviewContactSelectionDialog() {
     val selectedContacts = setOf("+1 555-0202")
 
     ShizucallrecorderTheme(darkTheme = false) {
-        ContactSelectionDialog(
+        ContactSelectionContent(
             title = stringResource(R.string.settings_select_contacts, selectedContacts.count()),
             contacts = dummyContacts,
             initialSelection = selectedContacts,

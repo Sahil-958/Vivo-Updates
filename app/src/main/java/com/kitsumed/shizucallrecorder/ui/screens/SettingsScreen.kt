@@ -44,6 +44,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kitsumed.shizucallrecorder.ui.common.ContactSelectionDialog
 import com.kitsumed.shizucallrecorder.ui.common.M3DropdownField
 import com.kitsumed.shizucallrecorder.ui.common.OptionItem
+import com.kitsumed.shizucallrecorder.ui.common.ToggleListItem
 import com.kitsumed.shizucallrecorder.ui.viewmodels.ContactPickerType
 import com.kitsumed.shizucallrecorder.ui.viewmodels.ContactPickerViewModel
 import com.kitsumed.shizucallrecorder.ui.viewmodels.DebugAction
@@ -703,35 +704,6 @@ private fun DebugSection(preferences: AppPreferences, updateTrigger: Int, action
 
 // ── Internal helper composables ────────────────────────────────────────────────────────────
 
-/** A list row with a switch. Tapping anywhere on the row toggles the switch.
- *
- * @param label           The text shown as the headline of the row.
- * @param checked         The current on/off state of the switch.
- * @param onCheckedChange Called with the new boolean when the user toggles.
- * @param modifier        Optional [Modifier] forwarded to the root [ListItem].
- * @param description     Optional text shown below the label.
- * @param enabled         Whether the switch and row are interactable.
- */
-@Composable
-private fun ToggleListItem(
-    label: String,
-    checked: Boolean,
-    onCheckedChange: (Boolean) -> Unit,
-    modifier: Modifier = Modifier,
-    description: String? = null,
-    enabled: Boolean = true
-) {
-    val contentAlpha = if (enabled) 1f else 0.38f
-    ListItem(
-        modifier        = modifier.clickable(enabled = enabled) { onCheckedChange(!checked) },
-        headlineContent = { Text(label, color = MaterialTheme.colorScheme.onSurface.copy(alpha = contentAlpha)) },
-        supportingContent = if (description != null) {
-            { Text(description, color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = contentAlpha)) }
-        } else null,
-        trailingContent = { Switch(checked = checked, onCheckedChange = onCheckedChange, enabled = enabled) },
-        colors          = ListItemDefaults.colors(containerColor = Color.Transparent)
-    )
-}
 
 /** A titled card that groups related settings together.
  *
