@@ -11,7 +11,8 @@ It can also be seen as an on-device wrapper for [scrcpy-server](https://github.c
 
 **This application is intended to be a very basic call recorder that focuses solely on call recording for phone carriers**.
 
-I am not 100% opposed to adding support for third-party apps, but this is not the main focus and I want to keep the application simple. See [contributing](./CONTRIBUTING.md) for more information.
+>[!NOTE]
+> I am not 100% opposed to adding support for third-party apps, but this is not the main focus and I want to keep the application simple. See [contributing](./CONTRIBUTING.md) for more information. We would first need to look into [this issue](https://github.com/kitsumed/ShizuCallRecorder/issues/1).
 
 ## Features
 
@@ -28,8 +29,8 @@ I am not 100% opposed to adding support for third-party apps, but this is not th
 - The app runs only on phone event changes, no persistent background process and notifications
 
 ## Requirements
-- **Android 12** or more recent*. **Look at the *Android Tested Versions* table**.
-    - ***Android 11 has very limited support***. [Only works when the device screen is unlocked due to a workaround to an OS issue.](https://github.com/Genymobile/scrcpy/blob/3fcc177da5b6b4514d0e8e8d90d7d58d6731eac9/server/src/main/java/com/genymobile/scrcpy/audio/AudioDirectCapture.java#L56-L68).
+- **Android 12** or more recent*.
+    - **Look at the *Android Tested Versions* table** for more informations on limitations.
 - [Shizuku](https://github.com/thedjchi/Shizuku)* (we recommend [thedjchi](https://github.com/thedjchi) fork)
 
 <details>
@@ -38,7 +39,7 @@ I am not 100% opposed to adding support for third-party apps, but this is not th
     
 | Android Version | Supported | Note                                  |
 |-----------------|-----------|---------------------------------------|
-| 11              |**Limited**|**Unlocked screen required**, else it crash|
+| 11              |**Limited**|**[Unlocked screen required](https://github.com/Genymobile/scrcpy/blob/3fcc177da5b6b4514d0e8e8d90d7d58d6731eac9/server/src/main/java/com/genymobile/scrcpy/audio/AudioDirectCapture.java#L56-L68)**, else it crash|
 | 12              | Yes       |                                      |
 | 13              | Yes       |                                      |
 | 14              | Yes       |                                      |
@@ -48,26 +49,22 @@ I am not 100% opposed to adding support for third-party apps, but this is not th
 
 </details>
 
-
-***[\*]***: This application uses the server binary of [scrcpy](https://github.com/genymobile/scrcpy) to record audio. It is possible that new Android versions may not be
-supported by the latest version yet. As such, this application will not be able to support newer or latest Android versions unless a release is made that supports them. The same can also be said about Shizuku.
-
+> [!IMPORTANT]  
+> This application makes use of hidden internal Android APIs. As such, it is prone to breaking in new Android releases or due to specific OEM modifications to the source code. There are multiple breaking points and dependencies. The two main ones right now are [scrcpy-server](https://github.com/genymobile/scrcpy) and Shizuku.
 
 ## Installation
-Before continuing, please ensure you can meet the [requirements](#requirements) that were stated before this section.
-
 ⚠️⚠️⬇️**YOU WILL NEED TO DO SOME INITIAL CONFIGURATIONS**.⬇️⚠️⚠️
 
 **Please follow the installation instructions in the [SUPPORT documentation](./docs/SUPPORT.md)** under **Installation & Configuration**. 
 
-You can download the latest version [here](#).
+You can download the latest version [here](https://github.com/kitsumed/ShizuCallRecorder/releases/latest).
 
 ## Contributing
 
 Please see the [contributing](./CONTRIBUTING.md) guide.
 
 <details>
-  <summary><b>Translation hosting generously provided by <a href="https://hosted.weblate.org/engage/shizucallrecorder/">Weblate</a>.<b/></summary>
+  <summary><strong>Translation hosting generously provided by <a href="https://hosted.weblate.org/engage/shizucallrecorder/">Weblate</a></strong>.</summary>
   <p align="left">
     <p><strong>NOTE:</strong> By default, Weblate will use your account creation email when making commits to GitHub (to give you credits). This would leak your email address, you can change this behavior in your account settings.</p>
     <a href="https://hosted.weblate.org/engage/shizucallrecorder/">
@@ -79,8 +76,6 @@ Please see the [contributing](./CONTRIBUTING.md) guide.
 ## License
 The software is licensed under the [GNU General Public License, version 3 (GPL-3.0)](LICENSE). ⚠️ **Additional terms** under GNU GPL version 3 Section 7 are at the end of the file.
  - This License does not grant any rights in the trademarks, service marks, or logos of any Contributor.
- - Misrepresentation of the origin of that material is prohibited, and modified versions of such material must be marked in reasonable ways as different from the original version. This is consistent with section 4 and 5 of the GPLv3 ("Modified Versions").
- - Specifically, this license does not grant you permission to use the name, trademarks, or logos associated with the project for your own purposes (e.g., uploading to app stores) unless granted explicit permission by the copyright holder ("Original Author").
  - *As example, the name "`ShizuCallRecorder`" and `com.kitsumed.shizucallrecorder` are the property of the copyright holder **kitsumed***.
 
 I decided to use the **GPL-3.0** license, as no other FOSS call recording app for non-root devices exists yet, and I want to ensure that any potential future alternatives derived from this project remain FOSS.
