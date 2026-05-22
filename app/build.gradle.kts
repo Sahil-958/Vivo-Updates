@@ -168,6 +168,9 @@ android {
         // Exclude the original metadata from libphonenumber to avoid conflicts with our extracted version. This ensures only our processed assets are included in the final APK.
         resources.excludes.add("com/google/i18n/phonenumbers/data/**")
     }
+    androidResources {
+        generateLocaleConfig = true
+    }
 }
 
 kotlin {
@@ -225,6 +228,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.appcompat)
 
     // Compose Core
     implementation(libs.androidx.activity.compose)
