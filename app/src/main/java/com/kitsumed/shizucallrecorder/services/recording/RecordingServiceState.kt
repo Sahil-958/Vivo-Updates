@@ -18,7 +18,7 @@ sealed class RecordingServiceState {
     /**
      * Represents the state when the recording service is starting up.
      */
-    data class Starting(override val metadata: RecordingMetadata?) : RecordingServiceState()
+    data class Starting(override val metadata: RecordingMetadata) : RecordingServiceState()
 
     /**
      * Represents the state when the recording service is in standby mode, waiting for a call to start recording.
@@ -35,6 +35,6 @@ sealed class RecordingServiceState {
     data class Active(
         val engine: AudioRecordingEngine,
         val isPaused: Boolean = false,
-        override val metadata: RecordingMetadata?
+        override val metadata: RecordingMetadata
     ) : RecordingServiceState()
 }

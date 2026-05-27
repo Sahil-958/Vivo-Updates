@@ -25,6 +25,7 @@ import com.kitsumed.shizucallrecorder.integrations.scrcpy.ScrcpyConfig
 import com.kitsumed.shizucallrecorder.system.storage.SafHelper
 import com.kitsumed.shizucallrecorder.integrations.scrcpy.ServerExtractor
 import com.kitsumed.shizucallrecorder.utils.AppLogger
+import com.kitsumed.shizucallrecorder.utils.RecordingFileNameFormatter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -114,7 +115,7 @@ class AudioRecordingEngine {
      * Orchestrates the initialization and connection of the entire recording pipeline.
      * @throws PipelineInitializationException if any step of the initialization fails, with details for user-friendly and technical error reporting.
      */
-    fun startPipeline(context: Service, service: IShellService, metadata: RecordingMetadata?) {
+    fun startPipeline(context: Service, service: IShellService, metadata: RecordingMetadata) {
         initializationMetadata = metadata
         val preferences = AppPreferences(context)
         val folderUri = preferences.getRecordingFolderUri()
@@ -132,7 +133,8 @@ class AudioRecordingEngine {
 
         AppLogger.i(TAG, "Starting recording pipeline: source=${audioSourceEnum.cliKey} codec=${codecEnum.cliKey} bitrate=$bitRate")
 
-        val fileName = metadata?.buildFileName(codecEnum) ?: "recording_${System.currentTimeMillis()}${codecEnum.containerExtension}"
+        val fileName = RecordingFileNameFormatter.formatFileName(context, metadata, codecEnum)
+
         val safResult = SafHelper.createAudioFile(context, folderUri, fileName, codecEnum.mimeType)
             ?: throw PipelineInitializationException(
                 userFriendlyMessage = context.getString(R.string.recording_error_file_creation),

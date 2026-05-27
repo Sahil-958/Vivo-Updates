@@ -70,6 +70,7 @@ interface SettingsActions {
     fun setShizukuAutoManageEnabled(enabled: Boolean)
     fun setShizukuStartOnRecordEnabled(enabled: Boolean)
     fun setShizukuAuthKey(key: String)
+    fun setFileNameTemplate(template: String)
 }
 
 /**
@@ -249,6 +250,17 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
      */
     override fun setAudioBitRate(bitRate: Int) {
         preferences.setAudioBitRate(bitRate)
+        refresh()
+    }
+
+    // -------- File Naming --------
+
+    /** Saves the file name template.
+     *
+     * @param template The template string.
+     */
+    override fun setFileNameTemplate(template: String) {
+        preferences.setFileNameTemplate(template)
         refresh()
     }
 

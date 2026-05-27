@@ -43,6 +43,7 @@ import com.kitsumed.shizucallrecorder.system.openGithub
 import com.kitsumed.shizucallrecorder.system.takePersistableFolderPermission
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kitsumed.shizucallrecorder.ui.common.ContactSelectionDialog
+import com.kitsumed.shizucallrecorder.ui.common.FileNameFormatDialog
 import com.kitsumed.shizucallrecorder.ui.common.M3DropdownField
 import com.kitsumed.shizucallrecorder.ui.common.OptionItem
 import com.kitsumed.shizucallrecorder.ui.common.ToggleListItem
@@ -213,7 +214,9 @@ fun SettingsContent(
                     )
 
                     val libraries by produceLibraries(R.raw.aboutlibraries)
-                    LibrariesContainer(libraries,Modifier.fillMaxSize().weight(1f),
+                    LibrariesContainer(libraries,Modifier
+                        .fillMaxSize()
+                        .weight(1f),
                         showAuthor = true, showLicenseBadges = true, showFundingBadges = false, showVersion = true, showDescription = true)
                     TextButton(
                         onClick = { showLicensesDialog = false },
@@ -457,6 +460,7 @@ private fun RecordingSection(
     
     // Evaluate these here so they are fetched on every recomposition.
     val recordingFolderLabel = remember(updateTrigger) { SafHelper.getFolderDisplayNameOrNull(context, preferences.getRecordingFolderUri()) }
+    val fileNameFormat = remember(updateTrigger) { preferences.getFileNameTemplate() }
     val autoRecordIncoming = remember(updateTrigger) { preferences.isAutoRecordIncomingEnabled() }
     val autoRecordOutgoing = remember(updateTrigger) { preferences.isAutoRecordOutgoingEnabled() }
     val ignoreAnonymousIncoming = remember(updateTrigger) { preferences.isIgnoreAnonymousIncomingEnabled() }
@@ -467,6 +471,8 @@ private fun RecordingSection(
     val ignoredContactsIncomingCount = remember(updateTrigger) { preferences.getIgnoredContactsIncoming().size }
     val ignoredContactsOutgoingCount = remember(updateTrigger) { preferences.getIgnoredContactsOutgoing().size }
 
+    var showFileNameFormatDialog by remember { mutableStateOf(false) }
+
     SettingsSection(title = stringResource(R.string.settings_section_recording)) {
         ListItem(
             modifier = Modifier.clickable { onSelectFolder() },
@@ -474,6 +480,18 @@ private fun RecordingSection(
             supportingContent = {
                 Text(
                     text = recordingFolderLabel ?: stringResource(R.string.settings_tap_to_select_folder),
+                    color = MaterialTheme.colorScheme.primary
+                )
+            },
+            colors = ListItemDefaults.colors(containerColor = Color.Transparent)
+        )
+
+        ListItem(
+            modifier = Modifier.clickable { showFileNameFormatDialog = true },
+            headlineContent = { Text(stringResource(R.string.settings_file_name_template)) },
+            supportingContent = {
+                Text(
+                    text = fileNameFormat,
                     color = MaterialTheme.colorScheme.primary
                 )
             },
@@ -541,6 +559,17 @@ private fun RecordingSection(
                 )
             }
         }
+    }
+
+    if (showFileNameFormatDialog) {
+        FileNameFormatDialog(
+            initialFormat = fileNameFormat,
+            onConfirm = { format ->
+                actions.setFileNameTemplate(format)
+                showFileNameFormatDialog = false
+            },
+            onDismiss = { showFileNameFormatDialog = false }
+        )
     }
 }
 
@@ -909,7 +938,11 @@ private fun SettingsScreenPreview() {
             override fun setShizukuAutoManageEnabled(enabled: Boolean) {}
             override fun setShizukuStartOnRecordEnabled(enabled: Boolean) {}
             override fun setShizukuAuthKey(key: String) {}
+            override fun setFileNameTemplate(template: String) {}
         }
+
+        // File name template selection dialog
+        //FileNameFormatDialog(AppPreferences.DefaultsValue.FILE_NAME_TEMPLATE, {},{})
 
         SettingsContent(
             preferences = dummyPreferences,

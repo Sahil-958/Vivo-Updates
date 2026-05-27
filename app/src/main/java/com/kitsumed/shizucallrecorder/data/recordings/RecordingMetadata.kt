@@ -10,15 +10,11 @@ package com.kitsumed.shizucallrecorder.data.recordings
 
 import android.content.Context
 import android.os.Parcelable
-import com.kitsumed.shizucallrecorder.integrations.scrcpy.ScrcpyAudioCodec
 import com.kitsumed.shizucallrecorder.utils.AppLogger
 import com.kitsumed.shizucallrecorder.utils.PhoneNumberManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.parcelize.Parcelize
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 /**
  * Carries the metadata associated with a single call that is being (or will be) recorded.
@@ -40,30 +36,6 @@ data class RecordingMetadata(
     val isCrossCountry: Boolean = false,
     val isEnriched: Boolean = false
 ) : Parcelable {
-    /**
-     * Builds a human-readable output filename.
-     * This format is based on BCR naming scheme.
-     *
-     * Pattern: {date}_{direction}_{phone_number}.{ext}
-     * Example: 20230414_215701.088-0400_out_+15145551234.ogg
-     *
-     * @param codec The selected codec used to determine the file extension.
-     * @return A filesystem-safe filename string.
-     */
-    fun buildFileName(codec: ScrcpyAudioCodec): String {
-        val date = SimpleDateFormat("yyyyMMdd_HHmmss.SSSZ", Locale.CANADA).format(Date())
-
-        val directionLabel = when (direction) {
-            RecordingDirection.INCOMING -> "in"
-            RecordingDirection.OUTGOING -> "out"
-        }
-
-        val displayNumber = getBestNumber()
-        val phonePart = if (displayNumber.isNullOrEmpty()) "" else "_$displayNumber"
-
-        return "${date}_${directionLabel}${phonePart}${codec.containerExtension}"
-    }
-
     /**
      * Returns the best available phone number for display and filename purposes.
      * Try the standardized E.164 number first, then fall back to the raw phone number if necessary.

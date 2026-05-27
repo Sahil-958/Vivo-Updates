@@ -23,6 +23,7 @@
     <string name="general_resume">Resume</string>
     <string name="general_incoming">incoming</string>
     <string name="general_outgoing">outgoing</string>
+    <string name="general_reset">Reset</string>
     <string name="general_system_limitation">System Limitation</string>
     <string name="general_system_limitation_message">ShizuCallRecorder will not work on this device as your shell application does not have the required permissions:\n\n%1$s\n\nThere is nothing you can do about this, the app cannot function and will now close.</string>
 
@@ -116,6 +117,16 @@
     <!-- Settings Screen: Recording Section -->
     <string name="settings_tap_to_select_folder">Tap to select folder...</string>
     <string name="settings_recording_folder_label">Recording Folder</string>
+
+    <string name="settings_file_name_template">File Name Template</string>
+    <string name="settings_file_name_template_placeholders">Placeholders:</string>
+    <string name="settings_file_name_template_placeholders_preview">Preview: %1$s</string>
+    <string name="placeholder_date_desc">The current date and time</string>
+    <string name="placeholder_direction_desc">The call direction (in/out)</string>
+    <string name="placeholder_phone_number_desc">The best available phone number</string>
+    <string name="placeholder_contact_name_desc">The contact name, if available</string>
+    <string name="placeholder_cross_country_desc">Indicates if the call is cross-country (true/false)</string>
+
     <string name="settings_auto_record_incoming">Automatically record incoming calls</string>
     <string name="settings_auto_record_outgoing">Automatically record outgoing calls</string>
     <string name="settings_ignore_anonymous_incoming">Ignore anonymous incoming calls</string>
@@ -241,6 +252,7 @@
     <string name="recording_error_server_missing">Scrcpy-server binary is missing or the security SHA256 check failed. This should not happen, please report this.</string>
     <string name="recording_error_file_creation">Failed to create recording file. Please check the storage permissions and/or select a new recording folder in the app settings.</string>
     <string name="recording_error_start_failed">Failed to start the recording. An error occurred when calling the ShellService binder method.</string>
+    <string name="recording_unexpected_error">An unexpected error occurred during recording. Please report this with the steps to reproduce and the apps logs.</string>
     <!-- Recording Service: Errors Shizuku -->
     <string name="recording_error_shizuku_disconnected_unexpectedly">Shizuku disconnected unexpectedly, causing the recording process to stop. (Shizuku-Server process died)</string>
     <string name="recording_shizuku_not_started">Shizuku-Server process is stopped. Please start Shizuku and ensure it is always able to run when the app wants to record audio.</string>

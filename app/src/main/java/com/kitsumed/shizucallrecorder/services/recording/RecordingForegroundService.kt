@@ -25,6 +25,7 @@ import com.kitsumed.shizucallrecorder.data.recordings.RecordingDirection
 import com.kitsumed.shizucallrecorder.data.recordings.RecordingMetadata
 import com.kitsumed.shizucallrecorder.utils.AppLogger
 import com.kitsumed.shizucallrecorder.utils.PhoneNumberManager
+import com.kitsumed.shizucallrecorder.utils.RecordingFileNameFormatter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -182,6 +183,14 @@ class RecordingForegroundService : Service() {
                     return START_NOT_STICKY
                 }
 
+                // At this point, we should already have the metadata from the intents, if it's missing, there's a logic error to be fixed.
+                if (currentMeta == null) {
+                    AppLogger.e(TAG, "Start request received without metadata. Cannot start recording session.")
+                    notificationHelper.showErrorNotification(getString(R.string.recording_unexpected_error))
+                    stopRecordingSessionAndService()
+                    return START_NOT_STICKY // We won't reach this anyway.
+                }
+
                 currentState = RecordingServiceState.Starting(currentMeta)
 
                 // If enabled in the user preferences, we try to start the Shizuku as we are now starting the recording.
@@ -284,10 +293,10 @@ class RecordingForegroundService : Service() {
     // ── Service internal logic ───────────────────────────────────────
     /**
      * Orchestrates the recording state at the Service level.
-     * Creates a new [RecordingSession], starts the I/O pipeline, updates the visible notification,
+     * Creates a new [AudioRecordingEngine], starts the I/O pipeline, updates the visible notification,
      * and handles fatal [PipelineInitializationException].
      */
-    private fun startNewRecordingSession(service: IShellService, metadata: RecordingMetadata?) {
+    private fun startNewRecordingSession(service: IShellService, metadata: RecordingMetadata) {
         if (hasSession) {
             AppLogger.w(TAG, "startNewRecordingSession() called while already active – ignoring")
             return
@@ -315,7 +324,7 @@ class RecordingForegroundService : Service() {
     /**
      * Stops the current recording session and stop the foreground recording service.
      *
-     * Always trigger [RecordingSession.release] so that if we are currently recording,
+     * Always trigger [AudioRecordingEngine.release] so that if we are currently recording,
      * we safely shuts down the pipeline and saves the file, clears the current session,
      * removes the foreground notification, and stops the service.
      */
@@ -359,7 +368,7 @@ class RecordingForegroundService : Service() {
 
                 if (finalNumber.isNotBlank()) {
                     val updatedMeta = originalMetadata.copy(rawPhoneNumber = finalNumber)
-                    val newName = updatedMeta.buildFileName(activeSession.currentCodecEnum)
+                    val newName = RecordingFileNameFormatter.formatFileName(applicationContext, updatedMeta, activeSession.currentCodecEnum)
                     try {
                         DocumentFile.fromSingleUri(applicationContext, uriToRename)
                             ?.renameTo(newName)
