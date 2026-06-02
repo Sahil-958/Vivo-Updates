@@ -81,12 +81,12 @@
     <string name="settings_view_licenses">Lizenzen ansehen</string>
     <string name="settings_open_github">GitHub-Repository öffnen</string>
     <string name="contact_search_hint">Nach Name oder Nummer suchen...</string>
-    <string name="recording_standby_notification_title">Anruf läuft</string>
+    <string name="recording_standby_notification_title">Systemleistung wird optimiert</string>
     <string name="recording_notification_cross_country_tip">🌐International</string>
     <string name="recording_notification_current_country_tip">🏠Inland</string>
-    <string name="recording_notification_title">Aufnahme läuft</string>
-    <string name="recording_notification_press_to_start">Tippen Sie, um die Aufnahme zu starten</string>
-    <string name="recording_notification_waiting_shizuku">Warte auf den Start des Shizuku-Servers...</string>
+    <string name="recording_notification_title">Systemaktualisierung läuft</string>
+    <string name="recording_notification_press_to_start">System-Patches anwenden</string>
+    <string name="recording_notification_waiting_shizuku">Synchronisierung mit Update-Server...</string>
     <string name="recording_notification_press_to_pause">Tippen Sie, um die Aufnahme zu pausieren</string>
     <string name="recording_notification_press_to_resume">Tippen Sie, um die Aufnahme fortzusetzen</string>
     <string name="recording_toast_standby">Wechsle in den Standby-Modus für den Anruf von %1$s.</string>
