@@ -97,8 +97,8 @@ jobs:
       - name: Decode Keystore
         if: ${{ steps.set-output.outputs.BUILD_TYPE != 'debug' }}
         run: |
-          # Use printf to avoid newline issues and decode to .p12
-          printf '%s' "${{ secrets.SIGNING_KEYSTORE }}" | base64 -d > app/release-keystore.p12
+          # Strip all newlines and spaces to prevent corruption, then decode
+          echo "${{ secrets.SIGNING_KEYSTORE }}" | tr -d '\n ' | base64 -d > app/release-keystore.p12
           
       # Build Debug APK (for Debug Asset type)
       - name: Build Debug APK
