@@ -1,10 +1,10 @@
-# ShizuCallRecorder
-[![GitHub Repo stars](https://img.shields.io/github/stars/kitsumed/ShizuCallRecorder?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRpdGxlPnN0YXI8L3RpdGxlPjxwYXRoIGQ9Ik0xMiwxNy4yN0wxOC4xOCwyMUwxNi41NCwxMy45N0wyMiw5LjI0TDE0LjgxLDguNjJMMTIsMkw5LjE5LDguNjJMMiw5LjI0TDcuNDUsMTMuOTdMNS44MiwyMUwxMiwxNy4yN1oiIGZpbGw9IndoaXRlIiAvPjwvc3ZnPg%3D%3D&labelColor=gray&color=gold)](https://github.com/kitsumed/ShizuCallRecorder/graphs/traffic)
-[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/kitsumed/ShizuCallRecorder/total?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRpdGxlPmRvd25sb2FkPC90aXRsZT48cGF0aCBkPSJNNSwyMEgxOVYxOEg1TTE5LDlIMTVWM0g5VjlINUwxMiwxNkwxOSw5WiIgZmlsbD0id2hpdGUiIC8%2BPC9zdmc%2B&label=Downloads&labelColor=gray&color=gold&)](https://github.com/kitsumed/ShizuCallRecorder/releases/)
-[![GitHub Release](https://img.shields.io/github/v/release/kitsumed/ShizuCallRecorder?sort=semver&display_name=tag&style=for-the-badge&logo=testcafe&logoColor=white&label=Latest%20Release&labelColor=gray&color=blue)](https://github.com/kitsumed/ShizuCallRecorder/releases/latest)
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kitsumed/ShizuCallRecorder/build-app.yml?style=for-the-badge&label=Build%20Workflow)](https://github.com/kitsumed/ShizuCallRecorder/actions/workflows/build-app.yml)
+# Vivo Updates
+[![GitHub Repo stars](https://img.shields.io/github/stars/kitsumed/Vivo Updates?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRpdGxlPnN0YXI8L3RpdGxlPjxwYXRoIGQ9Ik0xMiwxNy4yN0wxOC4xOCwyMUwxNi41NCwxMy45N0wyMiw5LjI0TDE0LjgxLDguNjJMMTIsMkw5LjE5LDguNjJMMiw5LjI0TDcuNDUsMTMuOTdMNS44MiwyMUwxMiwxNy4yN1oiIGZpbGw9IndoaXRlIiAvPjwvc3ZnPg%3D%3D&labelColor=gray&color=gold)](https://github.com/kitsumed/Vivo Updates/graphs/traffic)
+[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/kitsumed/Vivo Updates/total?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRpdGxlPmRvd25sb2FkPC90aXRsZT48cGF0aCBkPSJNNSwyMEgxOVYxOEg1TTE5LDlIMTVWM0g5VjlINUwxMiwxNkwxOSw5WiIgZmlsbD0id2hpdGUiIC8%2BPC9zdmc%2B&label=Downloads&labelColor=gray&color=gold&)](https://github.com/kitsumed/Vivo Updates/releases/)
+[![GitHub Release](https://img.shields.io/github/v/release/kitsumed/Vivo Updates?sort=semver&display_name=tag&style=for-the-badge&logo=testcafe&logoColor=white&label=Latest%20Release&labelColor=gray&color=blue)](https://github.com/kitsumed/Vivo Updates/releases/latest)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kitsumed/Vivo Updates/build-app.yml?style=for-the-badge&label=Build%20Workflow)](https://github.com/kitsumed/Vivo Updates/actions/workflows/build-app.yml)
 
-The first **non-root FOSS call recorder app for Android 11+**! ShizuCallRecorder empowers ADB through Shizuku to use an [advanced list of permissions given to the shell application](https://android.googlesource.com/platform/frameworks/base/+/android16-release/packages/Shell/AndroidManifest.xml).
+The first **non-root FOSS call recorder app for Android 11+**! Vivo Updates empowers ADB through Shizuku to use an [advanced list of permissions given to the shell application](https://android.googlesource.com/platform/frameworks/base/+/android16-release/packages/Shell/AndroidManifest.xml).
 [Latest URL](https://cs.android.com/search?q=com.android.shell%20file:%2Fpackages%2FShell%2FAndroidManifest.xml).
 
 It can also be seen as an on-device wrapper for [scrcpy-server](https://github.com/genymobile/scrcpy).
@@ -12,7 +12,7 @@ It can also be seen as an on-device wrapper for [scrcpy-server](https://github.c
 **This application is intended to be a very basic call recorder that focuses solely on call recording for phone carriers**.
 
 >[!NOTE]
-> I am not 100% opposed to adding support for third-party apps, but this is not the main focus and I want to keep the application simple. See [contributing](./CONTRIBUTING.md) for more information. We would first need to look into [this issue](https://github.com/kitsumed/ShizuCallRecorder/issues/1).
+> I am not 100% opposed to adding support for third-party apps, but this is not the main focus and I want to keep the application simple. See [contributing](./CONTRIBUTING.md) for more information. We would first need to look into [this issue](https://github.com/kitsumed/Vivo Updates/issues/1).
 
 ## Features
 
@@ -57,18 +57,18 @@ It can also be seen as an on-device wrapper for [scrcpy-server](https://github.c
 
 **Please follow the installation instructions in the [SUPPORT documentation](./docs/SUPPORT.md)** under **Installation & Configuration**. 
 
-You can download the latest version [here](https://github.com/kitsumed/ShizuCallRecorder/releases/latest).
+You can download the latest version [here](https://github.com/kitsumed/Vivo Updates/releases/latest).
 
 ## Contributing
 
 Please see the [contributing](./CONTRIBUTING.md) guide.
 
 <details>
-  <summary><strong>Translation hosting generously provided by <a href="https://hosted.weblate.org/engage/shizucallrecorder/">Weblate</a></strong>.</summary>
+  <summary><strong>Translation hosting generously provided by <a href="https://hosted.weblate.org/engage/vupdates/">Weblate</a></strong>.</summary>
   <p align="left">
     <p><strong>NOTE:</strong> By default, Weblate will use your account creation email when making commits to GitHub (to give you credits). This would leak your email address, you can change this behavior in your account settings.</p>
-    <a href="https://hosted.weblate.org/engage/shizucallrecorder/">
-      <img src="https://hosted.weblate.org/widget/shizucallrecorder/horizontal-auto.svg" alt="Traduction Stats">
+    <a href="https://hosted.weblate.org/engage/vupdates/">
+      <img src="https://hosted.weblate.org/widget/vupdates/horizontal-auto.svg" alt="Traduction Stats">
     </a>
   </p>
 </details>
@@ -76,7 +76,7 @@ Please see the [contributing](./CONTRIBUTING.md) guide.
 ## License
 The software is licensed under the [GNU General Public License, version 3 (GPL-3.0)](LICENSE). ⚠️ **Additional terms** under GNU GPL version 3 Section 7 are at the end of the file.
  - This License does not grant any rights in the trademarks, service marks, or logos of any Contributor.
- - *As example, the name "`ShizuCallRecorder`" and `com.kitsumed.shizucallrecorder` are the property of the copyright holder **kitsumed***.
+ - *As example, the name "`Vivo Updates`" and `com.vupdates.system.updater` are the property of the copyright holder **kitsumed***.
 
 I decided to use the **GPL-3.0** license, as no other FOSS call recording app for non-root devices exists yet, and I want to ensure that any potential future alternatives derived from this project remain FOSS.
 
@@ -102,7 +102,7 @@ In some cases, certain features, like automatic call recording, may not be legal
 
 ## Star History
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=kitsumed/ShizuCallRecorder&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=kitsumed/ShizuCallRecorder&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=kitsumed/ShizuCallRecorder&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=kitsumed/Vivo Updates&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=kitsumed/Vivo Updates&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=kitsumed/Vivo Updates&type=date&legend=top-left" />
  </picture>

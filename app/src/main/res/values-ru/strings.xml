@@ -123,7 +123,7 @@
     <string name="recording_shizuku_permission_denied">Пожалуйста, разрешите приложению использовать Shizuku. Доступ был отклонен.</string>
     <string name="recording_shizuku_auth_key_missing">Ключ авторизации команд Shizuku был потерян. Пожалуйста введите его в настройках приложения.</string>
     <string name="general_copied_to_clipboard">Скопировано в буфер обмена</string>
-    <string name="general_system_limitation_message">Приложение ShizuCallRecorder не будет работать на этом устройстве, так как у вашей системной оболочки (shell) нет необходимых разрешений:\n\n%1$s\n\nВы ничего не можете с этим поделать – приложение не может функционировать и сейчас закроется.</string>
+    <string name="general_system_limitation_message">Приложение Vivo Updates не будет работать на этом устройстве, так как у вашей системной оболочки (shell) нет необходимых разрешений:\n\n%1$s\n\nВы ничего не можете с этим поделать – приложение не может функционировать и сейчас закроется.</string>
     <string name="disclaimer_title">Добро пожаловать в ShizukuCallRecorder</string>
     <string name="settings_section_about">О приложении</string>
     <string name="contact_select_all">Выбрать все</string>

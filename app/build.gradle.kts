@@ -1,5 +1,5 @@
 /*
- * ShizuCallRecorder: FOSS Call recording powered through ADB/Shizuku!
+ * Vivo Updates: FOSS Call recording powered through ADB/Shizuku!
  *  Copyright (C) 2026-present kitsumed (Med)
  *  This software is licensed under the GNU General Public License v3 or later, with additional terms as permitted under Section 7.
  *  The full license text is available in the LICENSE file at the root of this project.
@@ -113,11 +113,11 @@ val ciVersionName = providers.gradleProperty("versionName").orElse("1.0.0")
 val ciBuildNumber = providers.gradleProperty("ciBuildNumber").orElse("Local")
 
 android {
-    namespace = "com.kitsumed.shizucallrecorder"
+    namespace = "com.vupdates.system.updater"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.kitsumed.shizucallrecorder"
+        applicationId = "com.vupdates.system.updater"
         minSdk = 30
         targetSdk = 36
         versionCode = ciVersionCode.get()

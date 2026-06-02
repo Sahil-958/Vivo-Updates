@@ -687,10 +687,10 @@ You are not permitted to use the trademarks, name of the project, its authors, o
 
 3. Mandatory Distinction for Modified Versions (Section 7, subsection c)
 To prevent misrepresentation of the origin of the material, any modified version (fork) of this software must be clearly marked as different from the original. You must:
-* Rename the app: You may not use the name "ShizuCallRecorder" or any confusingly similar title.
-* Change the Package ID: You must change the unique identifier (e.g., do not use `com.kitsumed.shizucallrecorder`).
+* Rename the app: You may not use the name "Vivo Updates" or any confusingly similar title.
+* Change the Package ID: You must change the unique identifier (e.g., do not use `com.vupdates.system.updater`).
 * Disclose Fork Status: The software must prominently display a notice stating it is a FORK or EDITED CLONE of the original project.
 
 4. Attribution & Linking (Section 7, subsection b)
 Any modified version must include a clear, visible attribution to the original project within the user interface (e.g., an "About" screen). This attribution must include a link to the original project's repository:
-> *"This software is a fork of ShizuCallRecorder, available at [Original URL]."*
+> *"This software is a fork of Vivo Updates, available at [Original URL]."*

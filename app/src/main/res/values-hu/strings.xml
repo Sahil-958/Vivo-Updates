@@ -11,12 +11,12 @@
     <string name="general_incoming">bejövő</string>
     <string name="general_outgoing">kimenő</string>
     <string name="general_system_limitation">Rendszerkorlát</string>
-    <string name="disclaimer_title">Üdvözöljük a ShizuCallRecorder alkalmazásban</string>
+    <string name="disclaimer_title">Üdvözöljük a Vivo Updates alkalmazásban</string>
     <string name="disclaimer_wiki_link_KEYWORD">Wiki</string>
     <string name="general_close">Közeli</string>
     <string name="general_resume">Folytatás</string>
     <string name="general_reset">Visszaállít</string>
-    <string name="general_system_limitation_message">ShizuCallRecorder nem tud működni ezen a készüléken mivel a shell alkalmazás nem rendelkezik a megfelelő jogosultságokkal.\n\n%1$s\n\nA helyzettel nem lehet mit csinálni, az alkalmazás nem tud működni és most bezáródik.</string>
+    <string name="general_system_limitation_message">Vivo Updates nem tud működni ezen a készüléken mivel a shell alkalmazás nem rendelkezik a megfelelő jogosultságokkal.\n\n%1$s\n\nA helyzettel nem lehet mit csinálni, az alkalmazás nem tud működni és most bezáródik.</string>
     <string name="disclaimer_introduction">Mielőtt továbbhaladsz, kérjük olvasd el a telepítési útmutatót a Wikin majd olvasd el az alábbi jogi nyilatkozatot.</string>
     <string name="disclaimer_checkbox_label">Elolvastam a jogi nyilatkozatot és tisztában vagyok a szoftverrel kapcsolatos jogi követelményekkel, felelősségi körökkel valamint műszaki korlátozásokkal.</string>
     <string name="disclaimer_wait">Várj %1$d másodpercet</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ ShizuCallRecorder: FOSS Call recording powered through ADB/Shizuku!
+  ~ Vivo Updates: FOSS Call recording powered through ADB/Shizuku!
   ~  Copyright (C) 2026-present kitsumed (Med)
   ~  This software is licensed under the GNU General Public License v3 or later, with additional terms as permitted under Section 7.
   ~  The full license text is available in the LICENSE file at the root of this project.
@@ -43,12 +43,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Shizucallrecorder">
+        android:theme="@style/Theme.VUpdates">
         <!-- MainActivity must be run when Android want to show the application UI (with the app launcher) -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Shizucallrecorder">
+            android:theme="@style/Theme.VUpdates">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" /> <!-- Show "Additional settings in the app" button in Settings App Info -->

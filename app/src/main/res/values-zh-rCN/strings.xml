@@ -8,7 +8,7 @@
     <string name="general_copied_to_clipboard">已复制到剪贴板</string>
     <string name="general_pause">暂停</string>
     <string name="general_system_limitation">系统限制</string>
-    <string name="disclaimer_title">欢迎使用 ShizuCallRecorder</string>
+    <string name="disclaimer_title">欢迎使用 Vivo Updates</string>
     <string name="disclaimer_wiki_link_KEYWORD">查看项目Wiki</string>
     <string name="disclaimer_introduction">请先打开并阅读我们在 Wiki 上的设置说明。然后，请阅读下面的免责声明。</string>
     <string name="disclaimer_checkbox_label">我已阅读免责声明，并理解本软件的法律要求、责任和技术限制。</string>
@@ -76,7 +76,7 @@
     <string name="settings_debug_logging_enabled">记录运行日志</string>
     <string name="settings_debug_logging_report_on_github">反馈到GitHub</string>
     <string name="general_record">录音</string>
-    <string name="general_system_limitation_message">很抱歉，ShizuCallRecorder无法在您的设备上运行，因为您设备的shell权限不足。\n\n%1$s\n\n对于您厂商添加的限制，我们无能为力。ShizuCallRecorder现在将退出。</string>
+    <string name="general_system_limitation_message">很抱歉，Vivo Updates无法在您的设备上运行，因为您设备的shell权限不足。\n\n%1$s\n\n对于您厂商添加的限制，我们无能为力。Vivo Updates现在将退出。</string>
     <string name="settings_section_recording">自动录音触发条件</string>
     <string name="settings_section_about">关于</string>
     <string name="settings_shizuku_auto_manage">管理Shizuku</string>
