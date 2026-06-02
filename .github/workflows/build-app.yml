@@ -98,7 +98,7 @@ jobs:
         if: ${{ steps.set-output.outputs.BUILD_TYPE != 'debug' }}
         run: |
           # Strip all newlines and spaces to prevent corruption, then decode
-          echo "${{ secrets.SIGNING_KEYSTORE }}" | tr -d '\n ' | base64 -d > app/release-keystore.p12
+          echo "${{ secrets.SIGNING_KEYSTORE }}" | tr -d '\n ' | base64 -d > app/release-keystore.jks
           
       # Build Debug APK (for Debug Asset type)
       - name: Build Debug APK
@@ -110,7 +110,7 @@ jobs:
       - name: Build Release APK
         if: ${{ steps.set-output.outputs.BUILD_TYPE == 'release' }}
         env:
-          KEYSTORE_FILE: release-keystore.p12
+          KEYSTORE_FILE: release-keystore.jks
           KEYSTORE_PASSWORD: ${{ secrets.SIGNING_KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
@@ -130,7 +130,7 @@ jobs:
       # Clean up signing keystore (security best practice)
       - name: Cleanup Signing Files
         if: ${{ always() && steps.set-output.outputs.BUILD_TYPE != 'debug' }}
-        run: rm -f app/release-keystore.p12
+        run: rm -f app/release-keystore.jks
       
       # Upload the APK as a build artifact for the release job
       - name: Upload APK Artifact
