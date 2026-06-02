@@ -97,9 +97,12 @@ jobs:
       - name: Decode Keystore
         if: ${{ steps.set-output.outputs.BUILD_TYPE != 'debug' }}
         run: |
-          # Strip all newlines and spaces to prevent corruption, then decode
-          echo "${{ secrets.SIGNING_KEYSTORE }}" | tr -d '\n ' | base64 -d > app/release-keystore.jks
-          
+          # Use printf to avoid newline issues, strip spaces, and decode to .jks
+          printf '%s' "${{ secrets.SIGNING_KEYSTORE }}" | tr -d '\n ' | base64 -d > app/release-keystore.jks
+
+          # VERIFICATION: Check if the file is a valid JKS keystore
+          keytool -list -keystore app/release-keystore.jks -storepass "${{ secrets.SIGNING_KEYSTORE_PASSWORD }}" -alias "${{ secrets.SIGNING_KEY_ALIAS }}"
+
       # Build Debug APK (for Debug Asset type)
       - name: Build Debug APK
         if: ${{ steps.set-output.outputs.BUILD_TYPE == 'debug' }}
