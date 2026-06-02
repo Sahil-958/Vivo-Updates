@@ -86,10 +86,10 @@ jobs:
         run: |
           if [ "${{ inputs.release_type }}" = "Debug Asset" ]; then
             echo "BUILD_TYPE=debug" >> $GITHUB_OUTPUT
-            echo "FINAL_APK_NAME=Vivo Updates-${{ inputs.version }}-debug.apk" >> $GITHUB_OUTPUT
+            echo "FINAL_APK_NAME=VivoUpdates-${{ inputs.version }}-debug.apk" >> $GITHUB_OUTPUT
           else
             echo "BUILD_TYPE=release" >> $GITHUB_OUTPUT
-            echo "FINAL_APK_NAME=Vivo Updates-${{ inputs.version }}.apk" >> $GITHUB_OUTPUT
+            echo "FINAL_APK_NAME=VivoUpdates-${{ inputs.version }}.apk" >> $GITHUB_OUTPUT
           fi
       
       # Set up signing for release builds
@@ -119,14 +119,12 @@ jobs:
       # Rename and move APK with version for clarity
       - name: Prepare APK Artifact
         run: |
-          tree app/build/outputs/apk/
-          echo ----
           if [ "${{ steps.set-output.outputs.BUILD_TYPE }}" = "debug" ]; then
             mv app/build/outputs/apk/debug/app-debug.apk \
-               app/build/outputs/apk/Vivo Updates-${{ inputs.version }}-debug.apk
+               "app/build/outputs/apk/VivoUpdates-${{ inputs.version }}-debug.apk"
           else
             mv app/build/outputs/apk/release/app-release.apk \
-               app/build/outputs/apk/Vivo Updates-${{ inputs.version }}.apk
+               "app/build/outputs/apk/VivoUpdates-${{ inputs.version }}.apk"
           fi
       
       # Clean up signing keystore (security best practice)
@@ -139,7 +137,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: apk-${{ steps.set-output.outputs.BUILD_TYPE }}
-          path: app/build/outputs/apk/Vivo Updates-*.apk # Pattern, all apk file that start with the app name
+          path: "app/build/outputs/apk/VivoUpdates-*.apk" # Pattern, all apk file that start with the app name
           retention-days: 30
           if-no-files-found: error
 
