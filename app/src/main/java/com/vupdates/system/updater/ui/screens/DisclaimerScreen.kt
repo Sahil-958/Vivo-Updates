@@ -71,7 +71,7 @@ fun DisclaimerScreen(onContinue: () -> Unit, modifier: Modifier = Modifier) {
     // changes (like when recompose is triggered by a screen rotation)
     var hasAccepted by rememberSaveable { mutableStateOf(false) }
     var hasScrolledToBottom by rememberSaveable { mutableStateOf(false) }
-    var timeLeft by rememberSaveable { mutableIntStateOf(if (BuildConfig.DEBUG) 4 else 30) }
+    var timeLeft by rememberSaveable { mutableIntStateOf(0) }
 
     val scrollState = rememberScrollState()
 
