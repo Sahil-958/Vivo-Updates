@@ -1,6 +1,6 @@
 /*
- * Vivo Updates: FOSS Call recording powered through ADB/Shizuku!
- *  Copyright (C) 2026-present kitsumed (Med)
+ * Vivo-Updates: FOSS Call recording powered through ADB/Shizuku!
+ *  Copyright (C) 2026-present Sahil-958 (Med)
  *  This software is licensed under the GNU General Public License v3 or later, with additional terms as permitted under Section 7.
  *  The full license text is available in the LICENSE file at the root of this project.
  *  This software is distributed WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -13,14 +13,14 @@ package com.vupdates.system.updater
  */
 object AppUrls {
     /** The main GitHub repository for the project. */
-    const val GITHUB_REPOSITORY = "https://github.com/kitsumed/Vivo Updates"
+    const val GITHUB_REPOSITORY = "https://github.com/Sahil-958/Vivo-Updates"
 
     /** The GitHub Wiki page containing documentation and guides. */
-    const val GITHUB_WIKI = "https://github.com/kitsumed/Vivo Updates/blob/main/docs/SUPPORT.md"
+    const val GITHUB_WIKI = "https://github.com/Sahil-958/Vivo-Updates/blob/main/docs/SUPPORT.md"
 
     /** The URL to open when the user wants to report a bug or create a new issue. */
-    const val GITHUB_NEW_ISSUE = "https://github.com/kitsumed/Vivo Updates/issues/new/choose"
+    const val GITHUB_NEW_ISSUE = "https://github.com/Sahil-958/Vivo-Updates/issues/new/choose"
 
-    /** The Shizuku project website/repository. */
-    const val SHIZUKU_WEBSITE = "https://github.com/thedjchi/Shizuku"
+    /** The System Engine source/repository. */
+    const val ENGINE_WEBSITE = "https://github.com/thedjchi/Shizuku"
 }

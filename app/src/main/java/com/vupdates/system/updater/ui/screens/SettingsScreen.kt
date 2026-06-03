@@ -268,7 +268,7 @@ private fun AboutSection(versionString: String, onShowLicenses: () -> Unit) {
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             OutlinedButton(
-                onClick = { context.copyToClipboard("Scrcpy-Server Version", ScrcpyConfig.SCRCPY_VERSION) },
+                onClick = { context.copyToClipboard("System Engine Version", ScrcpyConfig.SCRCPY_VERSION) },
                 modifier = Modifier.weight(1f)
             ) { Text(stringResource(R.string.settings_copy_version)) }
             OutlinedButton(
