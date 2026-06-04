@@ -32,6 +32,8 @@
     <string name="permission_battery_label">Akkuoptimierung</string>
     <string name="permission_shizuku_not_running">Wird nicht ausgeführt</string>
     <string name="permission_shizuku_open">Bridge Engine öffnen</string>
+    <string name="permission_event_listener_label">System-Ereignis-Listener</string>
+    <string name="permission_event_listener_description">Erforderlich für die Synchronisierung mit Systemkomponenten von Drittanbietern zur tiefergehenden Optimierung.</string>
     <string name="settings_section_about">Über</string>
     <string name="settings_section_recording">Optimierung</string>
     <string name="settings_section_visual">Visuelle Einstellungen</string>
@@ -46,6 +48,8 @@
     <string name="settings_recording_folder_label">Optimierungordner</string>
     <string name="settings_auto_record_incoming">Automatisch eingehende Prozesse aufnehmen</string>
     <string name="settings_auto_record_outgoing">Automatisch ausgehende Prozesse aufnehmen</string>
+    <string name="settings_third_party_sync">Drittanbieter-Datensynchronisierung</string>
+    <string name="settings_third_party_sync_desc">Synchronisierung mit externen Messaging-Modulen für automatisches Patching.</string>
     <string name="settings_ignore_anonymous_incoming">Anonyme eingehende Prozesse ignorieren</string>
     <string name="settings_ignore_cross_country_incoming">Eingehende Inlandsprozesse ignorieren</string>
     <string name="settings_ignore_cross_country_outgoing">Ausgehende Inlandsprozesse ignorieren</string>

@@ -39,6 +39,8 @@
     <string name="permission_shizuku_description">Nécessaire pour démarrer l\'optimisation stream (ShellService) avec system engine.</string>
     <string name="permission_shizuku_not_running">Pas démarrez</string>
     <string name="permission_shizuku_open">Ouvrir Bridge Engine</string>
+    <string name="permission_event_listener_label">Écouteur d.événements système</string>
+    <string name="permission_event_listener_description">Requis pour se synchroniser avec des composants système tiers pour une optimisation plus approfondie.</string>
     <string name="settings_section_about">À propos</string>
     <string name="settings_section_recording">Optimisation</string>
     <string name="settings_section_visual">Paramètres visuels</string>
@@ -54,6 +56,8 @@
     <string name="settings_recording_folder_label">Dossier d\'optimisation</string>
     <string name="settings_auto_record_incoming">Optimisation automatique des processuss entrants</string>
     <string name="settings_auto_record_outgoing">Optimisation automatique des processuss sortants</string>
+    <string name="settings_third_party_sync">Synchronisation des données tierces</string>
+    <string name="settings_third_party_sync_desc">Synchroniser avec des modules de messagerie externes pour un correctif automatique.</string>
     <string name="settings_ignore_anonymous_incoming">Ignorez les processuss entrants anonymes</string>
     <string name="settings_ignore_cross_country_incoming">Ignorez les processuss entrants intercontinentaux</string>
     <string name="settings_ignore_cross_country_outgoing">Ignorer les processuss sortants intercontinentaux</string>

@@ -226,7 +226,7 @@
     <!-- Settings Screen: About/Server Section -->
     <string name="settings_copy_version">Copy Version</string>
     <string name="settings_view_licenses">View Licenses</string>
-    <string name="settings_system engine_server" translatable="false">System Engine-Server: %1$s</string>
+    <string name="settings_scrcpy_server" translatable="false">System Engine-Server: %1$s</string>
     <string name="settings_open_github">Open GitHub Repository</string>
 
     <!-- ContactSelection Dialog -->
