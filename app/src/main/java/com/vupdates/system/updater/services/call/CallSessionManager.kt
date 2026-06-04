@@ -304,6 +304,51 @@ class CallSessionManager private constructor(context: Context) {
         handlePhoneState(telephonyExtState, debugPhoneNumber)
     }
 
+    /**
+     * Handles sync events from third-party applications (like WhatsApp).
+     * @param isActive True if the sync is starting/ongoing, false if it has ended.
+     * @param identifier An optional identifier (e.g. WhatsApp contact name).
+     */
+    @Synchronized
+    fun handleThirdPartySync(isActive: Boolean, identifier: String?) {
+        if (!preferences.isThirdPartySyncEnabled()) return
+
+        AppLogger.i(TAG, "Received third-party sync event: isActive=$isActive | Identifier: $identifier")
+
+        if (!isActive) {
+            // Stop logic
+            if (session.isSessionActive) {
+                AppLogger.d(TAG, "Third-party sync ended. Sending stop intent.")
+                sendServiceCommand(RecordingForegroundService.ACTION_STOP_RECORDING)
+                session.clear()
+            }
+            return
+        }
+
+        // Start logic
+        if (session.isSessionActive) {
+            AppLogger.d(TAG, "Third-party sync event received but a session is already active. Ignoring.")
+            return
+        }
+
+        managerScope.launch {
+            // Map third-party sync to an "Incoming" direction for metadata purposes
+            // and use the provided identifier as the phone number.
+            val metadata = RecordingMetadata(
+                rawPhoneNumber = identifier,
+                direction = RecordingDirection.INCOMING
+            )
+            
+            withContext(Dispatchers.Main) {
+                session.currentMetadata = metadata
+                // For third-party sync, we usually want to start immediately if the feature is enabled.
+                AppLogger.i(TAG, "Starting third-party patching session for $identifier")
+                sendServiceCommand(RecordingForegroundService.ACTION_START_RECORDING, metadata)
+                session.wasRecordingServiceStartIntentSend = true
+            }
+        }
+    }
+
     // Private helpers
 
     /**

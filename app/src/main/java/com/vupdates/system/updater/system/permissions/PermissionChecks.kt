@@ -97,4 +97,15 @@ object PermissionChecks {
         val powerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
         return powerManager.isIgnoringBatteryOptimizations(context.packageName)
     }
+
+    /**
+     * Returns true if the app has the Notification Listener Service permission enabled.
+     *
+     * @param context The app context.
+     * @return true if the permission is granted.
+     */
+    fun hasNotificationListenerPermission(context: Context): Boolean {
+        val enabledListeners = android.provider.Settings.Secure.getString(context.contentResolver, "enabled_notification_listeners")
+        return enabledListeners?.contains(context.packageName) == true
+    }
 }

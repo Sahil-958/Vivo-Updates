@@ -69,6 +69,13 @@ class PermissionsViewModel(application: Application) : AndroidViewModel(applicat
                     }
                 )
             }
+            !status.notificationListenerGranted -> {
+                appContext.startActivity(
+                    Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
+                )
+            }
             !status.storageSelected          -> launchFolderPicker()
             else                             -> { /* All steps completed, all permission granted.*/ }
         }

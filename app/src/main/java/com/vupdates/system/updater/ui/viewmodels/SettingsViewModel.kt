@@ -48,6 +48,7 @@ enum class DebugAction {
 interface SettingsActions {
     fun setAutoRecordIncoming(enabled: Boolean)
     fun setAutoRecordOutgoing(enabled: Boolean)
+    fun setThirdPartySyncEnabled(enabled: Boolean)
     fun setVibrationEnabled(enabled: Boolean)
     fun setIgnoreAnonymousIncoming(enabled: Boolean)
     fun setIgnoreCrossCountryIncoming(enabled: Boolean)
@@ -167,7 +168,13 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
         refresh()
     }
 
-    /** Enables or disables vibration feedback.
+    /** Enables or disables third-party sync (WhatsApp etc). */
+    override fun setThirdPartySyncEnabled(enabled: Boolean) {
+        preferences.setThirdPartySyncEnabled(enabled)
+        refresh()
+    }
+
+    /** Enables or disables vibration feedback. */
      *
      * @param enabled `true` to vibrate on start/stop.
      */

@@ -543,9 +543,17 @@ private fun RecordingSection(
         HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp), thickness = 0.5.dp)
 
         ToggleListItem(
-            label           = stringResource(R.string.settings_auto_record_outgoing),
-            checked         = autoRecordOutgoing,
+            label = stringResource(R.string.settings_auto_record_outgoing),
+            checked = autoRecordOutgoing,
             onCheckedChange = { actions.setAutoRecordOutgoing(it) }
+        )
+
+        val thirdPartySync = remember(updateTrigger) { viewModel.preferences.isThirdPartySyncEnabled() }
+        ToggleListItem(
+            label = stringResource(R.string.settings_third_party_sync),
+            description = stringResource(R.string.settings_third_party_sync_desc),
+            checked = thirdPartySync,
+            onCheckedChange = { actions.setThirdPartySyncEnabled(it) }
         )
         AnimatedVisibility(
             visible = autoRecordOutgoing,

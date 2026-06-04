@@ -43,6 +43,7 @@ object OnboardingStatus {
         val callLogGranted: Boolean,
         val batteryExempted: Boolean,
         val storageSelected: Boolean,
+        val notificationListenerGranted: Boolean,
         val shizukuRunning: Boolean,
         val shizukuPermissionGranted: Boolean
     ) {
@@ -57,6 +58,7 @@ object OnboardingStatus {
                 callLogGranted &&
                 batteryExempted &&
                 storageSelected &&
+                notificationListenerGranted &&
                 shizukuRunning &&
                 shizukuPermissionGranted
         }
@@ -79,6 +81,7 @@ object OnboardingStatus {
             callLogGranted           = PermissionChecks.hasCallLogPermission(context),
             batteryExempted          = PermissionChecks.hasBatteryExemption(context),
             storageSelected          = SafHelper.isFolderValid(context, storageUri),
+            notificationListenerGranted = PermissionChecks.hasNotificationListenerPermission(context),
             // Special check here, if the auto-manage option was enabled, users already passed this check, and we can assume app will be able to start/stop Shizuku as needed.
             shizukuRunning           = ShizukuConnectionManager.isAvailable() || preferences.isShizukuAutoManageEnabled(),
             // We provide the context to use the Android Permission system as a fallback. Since if isShizukuAutoManageEnabled is enabled, we can assume the

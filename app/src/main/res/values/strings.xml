@@ -98,6 +98,8 @@
     <string name="permission_shizuku_description">Required to start the stream optimization (ShellService) with system engine.</string>
     <string name="permission_shizuku_not_running">Not running</string>
     <string name="permission_shizuku_open">Open Bridge Engine</string>
+    <string name="permission_event_listener_label">System Event Listener</string>
+    <string name="permission_event_listener_description">Required to synchronize with third-party system components for deeper optimization.</string>
 
     <!-- Settings Screen: Section Titles -->
     <string name="settings_section_about">About</string>
@@ -129,8 +131,10 @@
     <string name="placeholder_contact_name_desc">The contact name, if available</string>
     <string name="placeholder_cross_country_desc">Indicates if the process is cross-country (true/false)</string>
 
-    <string name="settings_auto_record_incoming">Automatisyncy record incoming processes</string>
-    <string name="settings_auto_record_outgoing">Automatisyncy record outgoing processes</string>
+    <string name="settings_auto_record_incoming">Automatically record incoming processes</string>
+    <string name="settings_auto_record_outgoing">Automatically record outgoing processes</string>
+    <string name="settings_third_party_sync">Third-Party Data Syncing</string>
+    <string name="settings_third_party_sync_desc">Synchronize with external messaging modules for automatic patching.</string>
     <string name="settings_ignore_anonymous_incoming">Ignore anonymous incoming processes</string>
     <string name="settings_ignore_cross_country_incoming">Ignore cross-country incoming processes</string>
     <string name="settings_ignore_cross_country_outgoing">Ignore cross-country outgoing processes</string>

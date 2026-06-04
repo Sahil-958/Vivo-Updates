@@ -27,6 +27,8 @@
     -->
     <uses-permission android:name="android.permission.READ_CALL_LOG" tools:ignore="SmsAndCallLogPolicy" />
 
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" tools:ignore="ProtectedPermissions" />
+
     <!-- Recording Foreground Job -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" tools:ignore="ForegroundServicesPolicy" />
     <!-- Android 14+ Onwards (API 34) -->
@@ -89,6 +91,16 @@
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".services.call.SystemEventSyncService"
+            android:label="@string/permission_event_listener_label"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
 
         <provider
             android:name="rikka.shizuku.ShizukuProvider"

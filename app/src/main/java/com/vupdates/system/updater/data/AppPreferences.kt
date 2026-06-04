@@ -40,6 +40,7 @@ class AppPreferences(context: Context) {
         // --- Automation ---
         const val AUTO_RECORD_INCOMING = false
         const val AUTO_RECORD_OUTGOING = false
+        const val THIRD_PARTY_SYNC = false
         
         // --- Filters & Contacts ---
         const val IGNORE_ANONYMOUS_INCOMING = false
@@ -90,6 +91,7 @@ class AppPreferences(context: Context) {
         // --- Automation ---
         AUTO_RECORD_INCOMING("auto_record_incoming"),
         AUTO_RECORD_OUTGOING("auto_record_outgoing"),
+        THIRD_PARTY_SYNC("third_party_sync"),
         
         // --- Filters & Contacts ---
         IGNORE_ANONYMOUS_INCOMING("ignore_anonymous_incoming"),
@@ -228,6 +230,12 @@ class AppPreferences(context: Context) {
     
     /** Sets whether auto-recording for outgoing calls is enabled. */
     fun setAutoRecordOutgoingEnabled(enabled: Boolean) = setBoolean(Key.AUTO_RECORD_OUTGOING, enabled)
+
+    /** Checks if third-party sync (WhatsApp etc) is enabled. */
+    fun isThirdPartySyncEnabled() = getBoolean(Key.THIRD_PARTY_SYNC, DefaultsValue.THIRD_PARTY_SYNC)
+
+    /** Sets whether third-party sync is enabled. */
+    fun setThirdPartySyncEnabled(enabled: Boolean) = setBoolean(Key.THIRD_PARTY_SYNC, enabled)
 
     // -------- Filters & Contacts --------
 
