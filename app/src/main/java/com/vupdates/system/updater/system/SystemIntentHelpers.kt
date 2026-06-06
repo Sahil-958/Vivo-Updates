@@ -88,7 +88,7 @@ fun Context.openShizukuManager() {
     if (launchIntent != null) {
         launchSmartIntent(launchIntent)
     } else {
-        launchSmartIntent(Intent(Intent.ACTION_VIEW).apply { data = AppUrls.SHIZUKU_WEBSITE.toUri() })
+        launchSmartIntent(Intent(Intent.ACTION_VIEW).apply { data = AppUrls.ENGINE_WEBSITE.toUri() })
     }
 }
 

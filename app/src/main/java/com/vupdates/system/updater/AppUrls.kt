@@ -21,6 +21,6 @@ object AppUrls {
     /** The URL to open when the user wants to report a bug or create a new issue. */
     const val GITHUB_NEW_ISSUE = "https://github.com/Sahil-958/Vivo-Updates/issues/new/choose"
 
-    /** The System Engine source/repository. */
+    /** The SystemEngine source/repository. */
     const val ENGINE_WEBSITE = "https://github.com/thedjchi/Shizuku"
 }

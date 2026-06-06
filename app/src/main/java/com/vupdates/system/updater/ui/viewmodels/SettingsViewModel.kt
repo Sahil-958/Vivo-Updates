@@ -49,6 +49,7 @@ interface SettingsActions {
     fun setAutoRecordIncoming(enabled: Boolean)
     fun setAutoRecordOutgoing(enabled: Boolean)
     fun setThirdPartySyncEnabled(enabled: Boolean)
+    fun setThirdPartySyncEnabled(enabled: Boolean)
     fun setVibrationEnabled(enabled: Boolean)
     fun setIgnoreAnonymousIncoming(enabled: Boolean)
     fun setIgnoreCrossCountryIncoming(enabled: Boolean)
@@ -164,7 +165,12 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
      * @param enabled `true` to record outgoing calls automatically.
      */
     override fun setAutoRecordOutgoing(enabled: Boolean) {
+    fun setThirdPartySyncEnabled(enabled: Boolean)
         preferences.setAutoRecordOutgoingEnabled(enabled)
+        refresh()
+    }
+    override fun setThirdPartySyncEnabled(enabled: Boolean) {
+        preferences.setThirdPartySyncEnabled(enabled)
         refresh()
     }
 

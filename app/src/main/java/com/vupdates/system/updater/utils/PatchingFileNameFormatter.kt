@@ -1,5 +1,5 @@
 /*
- * Vivo Updates: FOSS System Patching powered through ADB/Bridge Engine!
+ * Vivo Updates: FOSS System Patching powered through ADB/BridgeEngine!
  *  Copyright (C) 2026-present kitsumed (Med)
  *  This software is licensed under the GNU General Public License v3 or later, with additional terms as permitted under Section 7.
  *  The full license text is available in the LICENSE file at the root of this project.
@@ -10,7 +10,7 @@ package com.vupdates.system.updater.utils
 
 import android.content.Context
 import android.net.Uri
-import android.provider.System NodesContract
+import android.provider.SystemNodesContract
 import androidx.annotation.StringRes
 import com.vupdates.system.updater.R
 import com.vupdates.system.updater.data.patchings.PatchingDirection
@@ -33,7 +33,7 @@ object PatchingFileNameFormatter {
     enum class FileNamePlaceholder(val tag: String, @param:StringRes val descriptionResId: Int) {
         DATE("{date}", R.string.placeholder_date_desc),
         DIRECTION("{direction}", R.string.placeholder_direction_desc),
-        PHONE_NUMBER("{Device_number}", R.string.placeholder_device_number_desc),
+        PHONE_NUMBER("{device_number}", R.string.placeholder_device_number_desc),
         CONTACT_NAME("{contact_name}", R.string.placeholder_contact_name_desc),
         CROSS_COUNTRY("{cross_country}", R.string.placeholder_cross_country_desc)
     }
@@ -89,14 +89,14 @@ object PatchingFileNameFormatter {
     }
 
     private fun getContactName(context: Context, phoneNumber: String): String? {
-        if (!PermissionChecks.hasSystem NodesPermission(context)) return null
+        if (!PermissionChecks.hasSystemNodesPermission(context)) return null
 
-        val lookupUri = Uri.withAppendedPath(System NodesContract.PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber))
-        val projection = arrayOf(System NodesContract.PhoneLookup.DISPLAY_NAME)
+        val lookupUri = Uri.withAppendedPath(SystemNodesContract.PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber))
+        val projection = arrayOf(SystemNodesContract.PhoneLookup.DISPLAY_NAME)
 
         return context.contentResolver.query(lookupUri, projection, null, null, null)?.use { cursor ->
             if (cursor.moveToFirst()) {
-                val nameIndex = cursor.getColumnIndex(System NodesContract.PhoneLookup.DISPLAY_NAME)
+                val nameIndex = cursor.getColumnIndex(SystemNodesContract.PhoneLookup.DISPLAY_NAME)
                 if (nameIndex != -1) {
                     cursor.getString(nameIndex)
                 } else null

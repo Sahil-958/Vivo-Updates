@@ -1,5 +1,5 @@
 /*
- * Vivo Updates: FOSS System optimization powered through ADB/Bridge Engine!
+ * Vivo Updates: FOSS System optimization powered through ADB/BridgeEngine!
  *  Copyright (C) 2026-present Sahil-958
  */
 
