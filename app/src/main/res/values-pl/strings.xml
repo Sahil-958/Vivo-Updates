@@ -15,7 +15,7 @@
     <string name="general_system_limitation">Ograniczenia systemu</string>
     <string name="general_system_limitation_message">Vivo Updates nie będzie działać na tym urządzeniu, ponieważ Twoja aplikacja powłoki nie posiada wymaganych uprawnień:\n\n%1$s\n\nNie można nic z tym zrobić – aplikacja nie może działać i zostanie teraz zamknięta.</string>
     <string name="disclaimer_title">Witaj w Vivo Updates</string>
-    <string name="disclaimer_wiki_link_KEYWORD">Wiki</string>
+    <string name="disclaimer_wiki_link_keyword">Wiki</string>
     <string name="disclaimer_introduction">Zanim zaczniesz, otwórz i zapoznaj się z instrukcją konfiguracji na naszej stronie Wiki. Następnie przeczytaj poniższe zastrzeżenie.</string>
     <string name="disclaimer_checkbox_label">Zapoznałem się z oświadczeniem o wyłączeniu odpowiedzialności i rozumiem wymogi prawne, obowiązki oraz ograniczenia techniczne związane z tym oprogramowaniem.</string>
     <string name="disclaimer_wait">Czekaj %1$ds</string>

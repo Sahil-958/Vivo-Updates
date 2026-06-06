@@ -9,7 +9,7 @@
     <string name="general_pause">暂停</string>
     <string name="general_system_limitation">系统限制</string>
     <string name="disclaimer_title">欢迎使用 Vivo Updates</string>
-    <string name="disclaimer_wiki_link_KEYWORD">查看项目Wiki</string>
+    <string name="disclaimer_wiki_link_keyword">查看项目Wiki</string>
     <string name="disclaimer_introduction">请先打开并阅读我们在 Wiki 上的设置说明。然后，请阅读下面的免责声明。</string>
     <string name="disclaimer_checkbox_label">我已阅读免责声明，并理解本软件的法律要求、责任和技术限制。</string>
     <string name="disclaimer_wait">等待%1$d秒</string>

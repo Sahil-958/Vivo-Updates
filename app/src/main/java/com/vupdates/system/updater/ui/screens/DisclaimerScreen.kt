@@ -113,7 +113,7 @@ fun DisclaimerScreen(onContinue: () -> Unit, modifier: Modifier = Modifier) {
 
             // Introduction paragraph with a hyperlinked "Wiki" keyword
             val links = mapOf(
-                stringResource(R.string.disclaimer_wiki_link_KEYWORD) to AppUrls.GITHUB_WIKI
+                stringResource(R.string.disclaimer_wiki_link_keyword) to AppUrls.GITHUB_WIKI
             )
 
             HyperlinkText(stringResource(R.string.disclaimer_introduction), links)

@@ -16,7 +16,7 @@
     <string name="general_system_limitation">Giới hạn hệ thống</string>
     <string name="general_system_limitation_message">Vivo Updates sẽ không hoạt động trên thiết bị này vì ứng dụng shell của bạn không có các quyền cần thiết:\n\n%1$s\n\nBạn không thể làm gì được nữa, ứng dụng không thể hoạt động và sẽ tự động đóng.</string>
     <string name="disclaimer_title">Chào mừng bạn đến với Vivo Updates</string>
-    <string name="disclaimer_wiki_link_KEYWORD">Wiki</string>
+    <string name="disclaimer_wiki_link_keyword">Wiki</string>
     <string name="disclaimer_introduction">Vui lòng mở và đọc hướng dẫn cài đặt trên Wiki của chúng tôi trước khi tiếp tục. Sau đó, hãy đọc phần tuyên bố miễn trừ trách nhiệm bên dưới.</string>
     <string name="disclaimer_checkbox_label">Tôi đã đọc điều khoản miễn trừ trách nhiệm và hiểu rõ các yêu cầu pháp lý, trách nhiệm và giới hạn kỹ thuật của phần mềm này.</string>
     <string name="disclaimer_wait">Chờ %1$ds</string>

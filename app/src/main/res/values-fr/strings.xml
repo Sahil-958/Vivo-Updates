@@ -15,7 +15,7 @@
     <string name="general_system_limitation">Limitation Système</string>
     <string name="general_system_limitation_message">Vivo Updates ne fonctionnera pas sur cet appareil car votre application shell ne dispose pas des autorisations requises :\n\n%1$s\n\nVous ne pouvez rien y faire, l’application ne peut pas fonctionner et va se fermer.</string>
     <string name="disclaimer_title">Bienvenue sur Vivo Updates</string>
-    <string name="disclaimer_wiki_link_KEYWORD">Wiki</string>
+    <string name="disclaimer_wiki_link_keyword">Wiki</string>
     <string name="disclaimer_introduction">Veuillez consulter les instructions d\'installation sur notre Wiki avant de continuer. Ensuite, lisez l\'avertissement ci-dessous.</string>
     <string name="disclaimer_checkbox_label">J\'ai lu l\'avertissement et je comprends les exigences légales, les responsabilités et les limitations techniques de ce logiciel.</string>
     <string name="disclaimer_wait">Attendez %1$ds</string>
