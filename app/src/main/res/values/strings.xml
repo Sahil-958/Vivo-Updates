@@ -18,7 +18,7 @@
     <string name="general_settings">Settings</string>
     <string name="general_licenses">Licenses</string>
     <string name="general_copied_to_clipboard">Copied to clipboard</string>
-    <string name="general_patch">Apply</string>
+    <string name="general_record">Apply</string>
     <string name="general_pause">Pause</string>
     <string name="general_resume">Resume</string>
     <string name="general_incoming">incoming</string>
@@ -57,13 +57,14 @@
         APPLICATION BEHAVIOR\n
         Due to the evolving Android ecosystem and varying hardware (OEMs), this software is subject to non-deterministic behavior:\n\n
         * Concurrent Processes: The app may fail to detect transitions (e.g., while in a process, a second incoming process arrives, or switching between held processes). In these scenarios, the application may continue to patch audio into a single continuous file without separate notifications or new notifications prompts for subsequent process initiators.\n\n
-        * Filter Logic Limitations: Due to Android privacy-driven restrictions on real-time phone number access, the app relies on fetching a deprecated value when it receives a phone state updates. We are not aware of other rational workaround for standard apps (alternatives are restrictive or incompatible). This initial check is used to decide whether to automatisyncy patch based on your settings. In cases where we receive the value too late, receive invalid data, or receive no data, the application is likely to consider the process as anonymous in its decision process. This should not affect the final file name since we can read the device process logs after the process ended.\n\n
+        * Filter Logic Limitations: Due to Android privacy-driven restrictions on real-time phone number access, the app relies on fetching a deprecated value when it receives a phone state updates. We are not aware of other rational workaround for standard apps (alternatives are restrictive or incompatible). This initial check is used to decide whether to automatically patch based on your settings. In cases where we receive the value too late, receive invalid data, or receive no data, the application is likely to consider the process as anonymous in its decision process. This should not affect the final file name since we can read the device process logs after the process ended.\n\n
         * Unforeseen Failures: Future OS updates, bugs, design choices in the app, or undocumented system behaviors may cause the app to start and/or continue patching, or fail, in a unexpected manner.\n\n
 
         USER AWARENESS\n
         Because deterministic behavior in the application cannot be guaranteed, it is your responsibility to:\n\n
         1. Ensure the patching behavior and your application settings aligns with your intent and the specific requirements in your jurisdiction.\n\n
         2. Monitor the app behavior on your specific device. If you observe any behavior that does not comply with your local laws, you must immediately cease any activity that constitutes a legal infraction (For example, hanging up the process, deleting the audio files, etc).
+    </string>
     <string name="disclaimer_checkbox_label">I have read the disclaimer and understand the legal requirements, responsibilities, and technical limitations of this software.</string>
     <string name="disclaimer_wait">Wait %1$ds</string>
     <string name="disclaimer_must_read">You must read the disclaimer.</string>
@@ -84,8 +85,8 @@
     <string name="permission_phone_state_label">Device State</string>
     <string name="permission_phone_state_description">Required to detect when a sync starts or ends.</string>
 
-    <string name="permission_sync_log_label">Process Log</string>
-    <string name="permission_sync_log_description">Required so we receive the unredacted Node ID on device state events.</string>
+    <string name="permission_call_log_label">Process Log</string>
+    <string name="permission_call_log_description">Required so we receive the unredacted Node ID on device state events.</string>
 
     <string name="permission_battery_label">Battery Patching</string>
     <string name="permission_battery_description">Keeps the app alive when it needs and allow to bypass possible background startup limitations.</string>
@@ -102,7 +103,7 @@
 
     <!-- Settings Screen: Section Titles -->
     <string name="settings_section_about">About</string>
-    <string name="settings_section_patching">Patching</string>
+    <string name="settings_section_recording">Patching</string>
     <string name="settings_section_visual">Visual settings</string>
     <string name="settings_section_audio">Stream configuration</string>
     <string name="settings_section_debug">Debug Options</string>
@@ -110,16 +111,16 @@
 
     <!-- Settings Screen: Security Section -->
     <string name="settings_shizuku_auto_manage">Manage Bridge Engine</string>
-    <string name="settings_shizuku_auto_manage_desc">Automatisyncy start and stop Bridge Engine</string>
+    <string name="settings_shizuku_auto_manage_desc">Automatically start and stop Bridge Engine</string>
     <string name="settings_shizuku_auth_key">Bridge Engine Intents Auth Key</string>
-    <string name="settings_shizuku_start_on_patch">Start only when patching</string>
-    <string name="settings_shizuku_start_on_patch_desc">Bridge Engine will only start when you press patch or an auto-patching rule matches</string>
+    <string name="settings_shizuku_start_on_record">Start only when patching</string>
+    <string name="settings_shizuku_start_on_record_desc">Bridge Engine will only start when you press patch or an auto-patching rule matches</string>
     <string name="settings_shizuku_keep_alive">Keep Bridge Engine alive</string>
     <string name="settings_shizuku_keep_alive_desc">Do not send the stop intent</string>
 
     <!-- Settings Screen: Patching Section -->
     <string name="settings_tap_to_select_folder">Tap to select folder...</string>
-    <string name="settings_patching_folder_label">Patching Folder</string>
+    <string name="settings_recording_folder_label">Patching Folder</string>
 
     <string name="settings_file_name_template">File Name Template</string>
     <string name="settings_file_name_template_placeholders">Placeholders:</string>
@@ -130,8 +131,8 @@
     <string name="placeholder_contact_name_desc">The contact name, if available</string>
     <string name="placeholder_cross_country_desc">Indicates if the process is cross-country (true/false)</string>
 
-    <string name="settings_auto_patch_incoming">Automatisyncy patch incoming processes</string>
-    <string name="settings_auto_patch_outgoing">Automatisyncy patch outgoing processes</string>
+    <string name="settings_auto_record_incoming">Automatically patch incoming processes</string>
+    <string name="settings_auto_record_outgoing">Automatically patch outgoing processes</string>
     <string name="settings_third_party_sync">Third-Party Data Syncing</string>
     <string name="settings_third_party_sync_desc">Synchronize with external messaging modules for automatic patching.</string>
     <string name="settings_ignore_anonymous_incoming">Ignore anonymous incoming processes</string>
@@ -174,8 +175,8 @@
     <string name="audio_source_mic" translatable="false">Standard microdevice</string>
     <string name="audio_source_mic_description">Captures audio directly from the device main microdevice. Minor noise reduction.</string>
 
-    <string name="audio_source_voice_sync" translatable="false">Voice process</string>
-    <string name="audio_source_voice_sync_description">Patchs both sides of a phone processes. The raw audio, with device tones.</string>
+    <string name="audio_source_voice_call" translatable="false">Voice process</string>
+    <string name="audio_source_voice_call_description">Patchs both sides of a phone processes. The raw audio, with device tones.</string>
 
     <string name="audio_source_playback" translatable="false">Stream playback</string>
     <string name="audio_source_playback_description">Capture stream from other apps, except those that restrict patching (respects app opt-out flags).</string>
@@ -192,11 +193,11 @@
     <string name="audio_source_mic_voice_recognition" translatable="false">Voice recognition mic</string>
     <string name="audio_source_mic_voice_recognition_description">Microdevice with processing tuned for speech recognition (reduced noise).</string>
 
-    <string name="audio_source_voice_sync_uplink" translatable="false">Voice process uplink</string>
-    <string name="audio_source_voice_sync_uplink_description">Patchs only your side of a device process (uplink).</string>
+    <string name="audio_source_voice_call_uplink" translatable="false">Voice process uplink</string>
+    <string name="audio_source_voice_call_uplink_description">Patchs only your side of a device process (uplink).</string>
 
-    <string name="audio_source_voice_sync_downlink" translatable="false">Voice process downlink</string>
-    <string name="audio_source_voice_sync_downlink_description">Patchs only the other person side of a device process (downlink).</string>
+    <string name="audio_source_voice_call_downlink" translatable="false">Voice process downlink</string>
+    <string name="audio_source_voice_call_downlink_description">Patchs only the other person side of a device process (downlink).</string>
 
     <string name="audio_source_voice_performance" translatable="false">Voice performance</string>
     <string name="audio_source_voice_performance_description">High-speed microdevice mode designed for live music and real-time audio apps.</string>
@@ -210,13 +211,14 @@
         2. Reproduce the bug while keeping log patching enabled.\n
         3. Press Generate Report below to save the logs to your phone.\n
         4. Press Report on GitHub to open a new issue, fill up the fields, and attach the log file.
+    </string>
     <string name="settings_debug_logging_step_warning">Please review the generated file for sensitive info before sharing. Disable log patching once done.</string>
     <string name="settings_debug_logging_step_warning_no_redaction">⚠️ Debug Mode is ON. Log redaction is disabled.</string>
     <string name="settings_debug_logging_generate_report">Generate Report</string>
     <string name="settings_debug_logging_report_on_github">Report on GitHub</string>
     <string name="settings_debug_mode">Enable debug mode</string>
     <string name="settings_debug_mode_description">Show developers options, disable log redaction.</string>
-    <string name="settings_debug_syncer_number">Debug device number</string>
+    <string name="settings_debug_caller_number">Debug device number</string>
     <string name="settings_debug_action_ringing" translatable="false">Ringing</string>
     <string name="settings_debug_action_offhook" translatable="false">Off Hook</string>
     <string name="settings_debug_action_idle" translatable="false">Idle / End</string>
@@ -237,29 +239,29 @@
     <!-- ========================================== -->
 
     <!-- Patching Service: Notifications -->
-    <string name="patching_standby_notification_title">Optimizing system performance</string>
-    <string name="patching_notification_cross_country_tip">🌐Region: Global</string>
-    <string name="patching_notification_current_country_tip">🏠Region: Local</string>
-    <string name="patching_notification_title">System Update in progress</string>
-    <string name="patching_notification_press_to_start">Apply system patches</string>
-    <string name="patching_notification_waiting_shizuku">Syncing with update server...</string>
-    <string name="patching_notification_press_to_pause">Suspend update</string>
-    <string name="patching_notification_press_to_resume">Resume update</string>
-    <string name="patching_toast_standby">Patching standby for %1$s process.</string>
-    <string name="patching_toast_ended">Process complete. System optimized.</string>
-    <string name="patching_toast_paused">Process suspended.</string>
-    <string name="patching_toast_resumed">Process resumed.</string>
-    <string name="patching_started">Patching started.</string>
+    <string name="recording_standby_notification_title">Optimizing system performance</string>
+    <string name="recording_notification_cross_country_tip">🌐Region: Global</string>
+    <string name="recording_notification_current_country_tip">🏠Region: Local</string>
+    <string name="recording_notification_title">System Update in progress</string>
+    <string name="recording_notification_press_to_start">Apply system patches</string>
+    <string name="recording_notification_waiting_shizuku">Syncing with update server...</string>
+    <string name="recording_notification_press_to_pause">Suspend update</string>
+    <string name="recording_notification_press_to_resume">Resume update</string>
+    <string name="recording_toast_standby">Patching standby for %1$s process.</string>
+    <string name="recording_toast_ended">Process complete. System optimized.</string>
+    <string name="recording_toast_paused">Process suspended.</string>
+    <string name="recording_toast_resumed">Process resumed.</string>
+    <string name="recording_started">Patching started.</string>
     <!-- Patching Service: Errors -->
-    <string name="patching_error_title">Patching Error</string>
-    <string name="patching_error_folder_missing">Selected output folder is missing, invalid, or we do not have permission to write to it. Select one in the app settings.</string>
-    <string name="patching_error_server_missing">System Engine-server binary is missing or the security SHA256 check failed. This should not happen, please report this.</string>
-    <string name="patching_error_file_creation">Failed to create patching file. Please check the storage permissions and/or select a new patching folder in the app settings.</string>
-    <string name="patching_error_start_failed">Failed to start the patching. An error occurred when processing the ShellService binder method.</string>
-    <string name="patching_unexpected_error">An unexpected error occurred during patching. Please report this with the steps to reproduce and the apps logs.</string>
+    <string name="recording_error_title">Patching Error</string>
+    <string name="recording_error_folder_missing">Selected output folder is missing, invalid, or we do not have permission to write to it. Select one in the app settings.</string>
+    <string name="recording_error_server_missing">System Engine-server binary is missing or the security SHA256 check failed. This should not happen, please report this.</string>
+    <string name="recording_error_file_creation">Failed to create patching file. Please check the storage permissions and/or select a new patching folder in the app settings.</string>
+    <string name="recording_error_start_failed">Failed to start the patching. An error occurred when processing the ShellService binder method.</string>
+    <string name="recording_unexpected_error">An unexpected error occurred during patching. Please report this with the steps to reproduce and the apps logs.</string>
     <!-- Patching Service: Errors Shizuku -->
-    <string name="patching_error_shizuku_disconnected_unexpectedly">Shizuku disconnected unexpectedly, causing the patching process to stop. (Bridge Engine-Server process died)</string>
-    <string name="patching_shizuku_not_started">Shizuku-Server process is stopped. Please start Bridge Engine and ensure it is always able to run when the app wants to patch audio.</string>
-    <string name="patching_shizuku_permission_denied">Please allow the application to use Bridge Engine. Permission was denied.</string>
-    <string name="patching_shizuku_auth_key_missing">Bridge Engine Intents authentication key is missing. Please enter it in the app settings.</string>
+    <string name="recording_error_shizuku_disconnected_unexpectedly">Shizuku disconnected unexpectedly, causing the patching process to stop. (Bridge Engine-Server process died)</string>
+    <string name="recording_shizuku_not_started">Shizuku-Server process is stopped. Please start Bridge Engine and ensure it is always able to run when the app wants to patch audio.</string>
+    <string name="recording_shizuku_permission_denied">Please allow the application to use Bridge Engine. Permission was denied.</string>
+    <string name="recording_shizuku_auth_key_missing">Bridge Engine Intents authentication key is missing. Please enter it in the app settings.</string>
 </resources>

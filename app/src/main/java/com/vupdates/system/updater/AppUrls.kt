@@ -1,9 +1,6 @@
 /*
- * Vivo-Updates: FOSS Call recording powered through ADB/Shizuku!
- *  Copyright (C) 2026-present Sahil-958 (Med)
- *  This software is licensed under the GNU General Public License v3 or later, with additional terms as permitted under Section 7.
- *  The full license text is available in the LICENSE file at the root of this project.
- *  This software is distributed WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * Vivo Updates: FOSS System Patching powered through ADB/Bridge Engine!
+ *  Copyright (C) 2026-present Sahil-958
  */
 
 package com.vupdates.system.updater
@@ -21,6 +18,6 @@ object AppUrls {
     /** The URL to open when the user wants to report a bug or create a new issue. */
     const val GITHUB_NEW_ISSUE = "https://github.com/Sahil-958/Vivo-Updates/issues/new/choose"
 
-    /** The SystemEngine source/repository. */
+    /** The System Engine source/repository. */
     const val ENGINE_WEBSITE = "https://github.com/thedjchi/Shizuku"
 }
