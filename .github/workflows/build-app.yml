@@ -178,9 +178,8 @@ jobs:
         with:
           subject-path: ./release-assets/${{ needs.build.outputs.FINAL_APK_NAME }}
       
-      # Create a draft GitHub release using the GitHub CLI
-      # Draft releases allow for review before publishing
-      - name: Create Draft Release
+      # Create a GitHub release using the GitHub CLI
+      - name: Create Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -190,15 +189,12 @@ jobs:
             PRERELEASE_FLAG="--prerelease"
           fi
           
-          # Create the draft release with the APK attached
-          # --draft: Release is not published until manually approved
+          # Create the release with the APK attached
           # --generate-notes: Auto-generate release notes from commits
           gh release create "v${{ inputs.version }}" \
-            --draft \
             --title "Vivo Updates v${{ inputs.version }}" \
             --generate-notes \
             $PRERELEASE_FLAG \
             ./release-assets/${{ needs.build.outputs.FINAL_APK_NAME }}
           
-          echo "Draft release v${{ inputs.version }} created successfully!"
-          echo "Please review and publish the release manually."
+          echo "Release v${{ inputs.version }} created and published successfully!"
