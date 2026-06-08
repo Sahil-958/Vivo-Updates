@@ -44,7 +44,7 @@ class ExternalTriggerReceiver : BroadcastReceiver() {
                 
                 val serviceIntent = Intent(context, RecordingForegroundService::class.java).apply {
                     this.action = RecordingForegroundService.ACTION_START_RECORDING
-                    putExtra(RecordingForegroundService.EXTRA_RECORDING_METADATA, metadata)
+                    putExtra(RecordingMetadata.EXTRA_METADATA, metadata)
                 }
                 context.startForegroundService(serviceIntent)
             }
