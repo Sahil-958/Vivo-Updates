@@ -102,6 +102,15 @@
             </intent-filter>
         </service>
 
+        <receiver
+            android:name=".services.call.ExternalTriggerReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.vupdates.system.updater.ACTION_START_PATCH" />
+                <action android:name="com.vupdates.system.updater.ACTION_STOP_PATCH" />
+            </intent-filter>
+        </receiver>
+
         <provider
             android:name="rikka.shizuku.ShizukuProvider"
             android:authorities="${applicationId}.shizuku"
